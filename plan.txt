@@ -1,0 +1,9 @@
+home page
+sign in
+click button to download transaction history - saves all transactions to db
+save userid from token with transactions
+
+add bank transaction
+mark transaction as lunch
+mark transaction as not lunch
+add custom transaction
