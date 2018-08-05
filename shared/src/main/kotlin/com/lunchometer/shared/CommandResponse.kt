@@ -1,4 +1,4 @@
-package com.lunchometer.api.commandhandlers
+package com.lunchometer.shared
 
 import java.util.*
 

@@ -21,7 +21,7 @@ class RetrieveCardTransactionsHandlerTests {
     }
 
     @Test
-    fun `a tranasaction with the same id can not be added twice`() {
+    fun `a transaction with the same id can not be added twice`() {
         val addCardTransaction = Command.AddCardTransaction("userId", lunchTransaction)
 
         val result =

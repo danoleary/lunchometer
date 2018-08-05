@@ -21,7 +21,7 @@ class CommandHandlerProcessor : Processor<String, String> {
     override fun init(context: ProcessorContext) {
         this.context = context
         eventStore =  context.getStateStore(EventStore) as (KeyValueStore<String, String>)
-        Objects.requireNonNull(eventStore, "State store can't be null");
+        Objects.requireNonNull(eventStore, "State store can't be null")
     }
 
     override fun process(key: String, value: String) {

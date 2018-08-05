@@ -2,6 +2,7 @@ package com.lunchometer.starlingintegration
 
 import com.google.gson.Gson
 import com.lunchometer.shared.*
+import com.typesafe.config.ConfigFactory
 import org.apache.kafka.common.serialization.Serdes
 import org.apache.kafka.streams.KafkaStreams
 import org.apache.kafka.streams.StreamsBuilder
@@ -9,11 +10,13 @@ import org.apache.kafka.streams.StreamsConfig
 import org.json.JSONObject
 import java.util.*
 
-
 private const val bootstrapServers = "kafka1:9092"
 private val streamsConfiguration = Properties()
 
 fun main(args: Array<String>) {
+
+    val config = ConfigFactory.load()
+    val starlingToken = config.getString("starling.token")
 
     streamsConfiguration.put(StreamsConfig.APPLICATION_ID_CONFIG, "starling-integration")
     streamsConfiguration.put(StreamsConfig.CLIENT_ID_CONFIG, "starling-integration")
@@ -29,7 +32,7 @@ fun main(args: Array<String>) {
         .stream<String, String>(EventTopic)
         .filter{ _, v -> filterEvents(v) }
         .mapValues { _, v -> mapEvent(v) }
-        .flatMapValues { _, v -> fetchTransactions(v as Event.CardTransactionRetrievalRequested) }
+        .flatMapValues { _, v -> fetchTransactions(v as Event.CardTransactionRetrievalRequested, starlingToken) }
         .mapValues { _, v -> Gson().toJson(v) }
         .to(CommandsTopic)
 
@@ -42,25 +45,18 @@ fun main(args: Array<String>) {
     Runtime.getRuntime().addShutdownHook(Thread(streams::close))
 }
 
-private fun filterEvents(json: String): Boolean {
-    val type = JSONObject(json).getString("type")
-    return type == Event.CardTransactionRetrievalRequested::class.java.simpleName
-}
+private fun filterEvents(json: String) =
+    JSONObject(json).getString("type") == Event.CardTransactionRetrievalRequested::class.java.simpleName
 
-private fun mapEvent(json: String): Event {
-    val event = Gson().fromJson(json, Event.CardTransactionRetrievalRequested::class.java)
-    return event
-}
+private fun mapEvent(json: String) =
+    Gson().fromJson(json, Event.CardTransactionRetrievalRequested::class.java)
 
-fun fetchTransactions(event: Event.CardTransactionRetrievalRequested): List<Command> {
-    val starlingTransactions = getAllTransactions()
-    return starlingTransactions.map { Command.AddCardTransaction(
+private fun fetchTransactions(event: Event.CardTransactionRetrievalRequested, starlingToken: String) =
+    getAllTransactions(starlingToken).map { Command.AddCardTransaction(
         userId = event.userId,
         transaction = Transaction(
             id = it.id,
             amount = it.amount,
             created = it.created,
             retailer = it.narrative
-        )
-    ) }
-}
+        )) }

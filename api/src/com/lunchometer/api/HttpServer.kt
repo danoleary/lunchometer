@@ -4,11 +4,13 @@ import com.auth0.jwk.JwkProvider
 import com.auth0.jwk.JwkProviderBuilder
 import com.lunchometer.shared.Command
 import com.lunchometer.shared.Event
+import com.typesafe.config.ConfigFactory
 import io.ktor.application.*
 import io.ktor.auth.Authentication
 import io.ktor.auth.authenticate
 import io.ktor.auth.jwt.JWTPrincipal
 import io.ktor.auth.jwt.jwt
+import io.ktor.config.HoconApplicationConfig
 import io.ktor.content.*
 import io.ktor.features.*
 import io.ktor.response.respond
@@ -19,24 +21,29 @@ import io.ktor.http.HttpStatusCode
 import io.ktor.server.engine.embeddedServer
 import io.ktor.server.netty.Netty
 import org.apache.kafka.streams.KafkaStreams
+import org.apache.kafka.streams.state.QueryableStoreTypes
+import org.apache.kafka.streams.state.ReadOnlyKeyValueStore
 import java.io.*
 import java.math.BigDecimal
 import java.text.DateFormat
 import java.util.*
 import java.util.concurrent.TimeUnit
 
-data class TransactionDto(val id: UUID, val amount: BigDecimal, val date: String, val location: String)
-
-data class TransactionWeekDto(val id: UUID, val startDate: String, val transactions: List<TransactionDto>)
-
 fun startServer(streams: KafkaStreams) {
-    val jwkProvider = makeJwkProvider("")
-    val server = embeddedServer(Netty, port = 8080) {
+
+    val config = HoconApplicationConfig(ConfigFactory.load())
+    val port = config.property("ktor.deployment.port").getString().toInt()
+    val domain = config.property("jwt.domain").getString()
+    val audience = config.property("jwt.audience").getString()
+
+    val server = embeddedServer(Netty, port = port) {
+
         install(Authentication) {
+            val jwkProvider = makeJwkProvider(domain)
             jwt {
                 verifier(jwkProvider)
                 validate { credential ->
-                    if (credential.payload.audience.contains(""))
+                    if (credential.payload.audience.contains(audience))
                         JWTPrincipal(credential.payload)
                     else
                         null
@@ -60,7 +67,12 @@ fun startServer(streams: KafkaStreams) {
         routing {
             authenticate {
                 get("/api") {
-                    call.respond(200)
+                    val store: ReadOnlyKeyValueStore<String, String> =
+                        streams.store(EventStore, QueryableStoreTypes.keyValueStore())
+                    val json = store.get("dan")
+                    val events = deserializeEventList(json)
+                    val groupedTransactions = groupByWeek(events)
+                    call.respond(groupedTransactions)
                 }
                 post("/fetchTransactions") {
                     val userId = "dan"

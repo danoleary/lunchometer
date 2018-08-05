@@ -1,7 +1,7 @@
 package com.lunchometer.api
 
 import com.google.gson.Gson
-import com.lunchometer.api.commandhandlers.CommandResponse
+import com.lunchometer.shared.CommandResponse
 import com.lunchometer.shared.*
 import org.apache.kafka.common.serialization.Serdes
 import org.apache.kafka.common.serialization.StringDeserializer
@@ -65,7 +65,7 @@ class TopologyTests {
 
         publishCommand(key, command)
 
-        val expectedNewEvent = CommandResponse(command.id,true)
+        val expectedNewEvent = CommandResponse(command.id, true)
 
         OutputVerifier
             .compareKeyValue((testDriver as TopologyTestDriver)
@@ -77,12 +77,15 @@ class TopologyTests {
     @Test
     fun `multiple new events should be published to events topic`() {
         val key = "dan"
-        val command = Command.AddCardTransaction(key, lunchTransaction)
 
-        publishCommand(key, command)
+        publishRetrieveCardTransactions(key)
 
-        val expectedEvent1 = Event.CardTransactionAdded(key, lunchTransaction)
-        val expectedEvent2 = Event.TransactionMarkedAsLunch(key, lunchTransaction.id)
+        val addTransactionCommand = Command.AddCardTransaction(key, lunchTransaction)
+        publishCommand(key, addTransactionCommand)
+
+        val expectedEvent1 = Event.CardTransactionRetrievalRequested(key)
+        val expectedEvent2 = Event.CardTransactionAdded(key, lunchTransaction)
+        val expectedEvent3 = Event.TransactionMarkedAsLunch(key, lunchTransaction.id)
 
         OutputVerifier
             .compareKeyValue((testDriver as TopologyTestDriver)
@@ -91,6 +94,10 @@ class TopologyTests {
         OutputVerifier
             .compareKeyValue((testDriver as TopologyTestDriver)
                 .readOutput(EventTopic, stringDeserializer, stringDeserializer), key, Gson().toJson(expectedEvent2))
+
+        OutputVerifier
+            .compareKeyValue((testDriver as TopologyTestDriver)
+                .readOutput(EventTopic, stringDeserializer, stringDeserializer), key, Gson().toJson(expectedEvent3))
     }
 
     @Test

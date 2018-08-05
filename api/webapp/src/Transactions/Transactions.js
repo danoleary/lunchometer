@@ -1,24 +1,19 @@
 import React, { Component } from 'react';
 
 export class Transactions extends Component {
-
+    
     constructor(props) {
         super(props);
         this.state = { weeks: [], loading: true };
-        
+        this.getTransactions();
+    }
+
+    getTransactions() {
+
         var headers = new Headers();
         headers.append('Accept', 'application/json');
         headers.append('Authorization', 'Bearer ' + localStorage.getItem('access_token'));
-        
-        var postRequest = new Request('http://localhost:8080/fetchTransactions', {
-            method: "POST",
-            headers: headers
-        });
 
-        fetch(postRequest)
-            .then(response => response.json())
-            .then();
-        
         var getRequest = new Request('http://localhost:8080/api', {
             headers: headers
         });
@@ -28,6 +23,23 @@ export class Transactions extends Component {
             .then(data => {
                 this.setState({ weeks: data, loading: false });
             });
+    }
+
+    handleClick() {
+        var headers = new Headers();
+        headers.append('Accept', 'application/json');
+        headers.append('Authorization', 'Bearer ' + localStorage.getItem('access_token'));
+
+        var postRequest = new Request('http://localhost:8080/fetchTransactions', {
+            method: "POST",
+            headers: headers
+        });
+
+        fetch(postRequest)
+            .then(response => response.json())
+            .then((() => {
+               
+            }));
     }
 
     static renderTransactions(weeks) {
@@ -50,9 +62,13 @@ export class Transactions extends Component {
     }
 
     render() {
-        let contents = this.state.loading
-            ? <p><em>Loading...</em></p>
-            : Transactions.renderTransactions(this.state.weeks);
+        let contents =
+            <div>
+            <button onClick={this.handleClick}>
+                    Download transaction history
+                </button>
+            {Transactions.renderTransactions(this.state.weeks)}
+            </div>
 
         return (
             <div>

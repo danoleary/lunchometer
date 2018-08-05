@@ -62,7 +62,7 @@ curl -X GET -i http://localhost:8081/subjects
 
 docker-compose exec kafka1 kafka-topics --create --topic commands --partitions 1 --replication-factor 1 --if-not-exists --zookeeper zoo1:2181
 docker-compose exec kafka1 kafka-topics --create --topic events --partitions 1 --replication-factor 1 --if-not-exists --zookeeper zoo1:2181
-docker-compose exec kafka1 kafka-topics --create --topic commandResponses --partitions 1 --replication-factor 1 --if-not-exists --zookeeper zoo1:2181
+docker-compose exec kafka1 kafka-topics --create --topic commandresponses --partitions 1 --replication-factor 1 --if-not-exists --zookeeper zoo1:2181
 docker-compose exec kafka1 kafka-topics --list --zookeeper zoo1:2181
 
 

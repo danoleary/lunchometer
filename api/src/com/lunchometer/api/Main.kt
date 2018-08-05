@@ -1,21 +1,8 @@
 package com.lunchometer.api
 
-import com.google.gson.Gson
-import com.google.gson.GsonBuilder
-import com.lunchometer.api.commandhandlers.handle
-import com.lunchometer.shared.Command
-import com.lunchometer.shared.Event
 import org.apache.kafka.common.serialization.Serdes
 import org.apache.kafka.streams.KafkaStreams
-import org.apache.kafka.streams.StreamsBuilder
 import org.apache.kafka.streams.StreamsConfig
-import org.apache.kafka.streams.Topology
-import org.apache.kafka.streams.processor.ProcessorSupplier
-import org.apache.kafka.streams.state.KeyValueBytesStoreSupplier
-
-import org.apache.kafka.streams.state.Stores
-import org.json.simple.JSONObject
-import org.json.simple.parser.JSONParser
 
 import java.util.Properties
 

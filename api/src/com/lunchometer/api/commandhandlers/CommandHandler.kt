@@ -2,6 +2,7 @@ package com.lunchometer.api.commandhandlers
 
 import com.lunchometer.shared.Command
 import com.lunchometer.shared.Event
+import com.lunchometer.shared.InternalCommandResponse
 
 fun handle(events: List<Event>, command: Command): InternalCommandResponse {
     return when(command.type) {
@@ -12,3 +13,4 @@ fun handle(events: List<Event>, command: Command): InternalCommandResponse {
         else -> throw Exception()
     }
 }
+

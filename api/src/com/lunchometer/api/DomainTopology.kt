@@ -14,6 +14,7 @@ import org.apache.kafka.streams.state.StoreBuilder
 import org.apache.kafka.streams.state.Stores
 
 const val EventStore = "event-store"
+const val CommandResponseStore = "command-response-store"
 
 private const val commandSource = "command-source"
 private const val commandHandlerProcessor = "command-handler"
@@ -29,8 +30,9 @@ fun buildTopology(): Topology {
     topologyBuilder
         .addSource(commandSource, CommandsTopic)
         .addProcessor(commandHandlerProcessor, ProcessorSupplier { CommandHandlerProcessor() }, commandSource)
-        .addStateStore(storeBuilder(), commandHandlerProcessor)
+        .addStateStore(storeBuilder(EventStore), commandHandlerProcessor)
         .addProcessor(commandResponsePublishingProcessor, ProcessorSupplier { CommandResponsePublishingProcessor() }, commandHandlerProcessor)
+        .addStateStore(storeBuilder(CommandResponseStore), commandResponsePublishingProcessor)
         .addProcessor(eventPublishingProcessor, ProcessorSupplier { EventPublishingProcessor() }, commandHandlerProcessor)
         .addSink(commandResponseSink, CommandResponsesTopic, commandResponsePublishingProcessor)
         .addSink(eventSink, EventTopic, eventPublishingProcessor)
@@ -38,9 +40,9 @@ fun buildTopology(): Topology {
     return topologyBuilder
 }
 
-private fun storeBuilder(): StoreBuilder<KeyValueStore<String, String>>? {
+private fun storeBuilder(name: String): StoreBuilder<KeyValueStore<String, String>>? {
     return Stores.keyValueStoreBuilder(
-        Stores.persistentKeyValueStore(EventStore),
+        Stores.persistentKeyValueStore(name),
         Serdes.String(),
         Serdes.String())
 }

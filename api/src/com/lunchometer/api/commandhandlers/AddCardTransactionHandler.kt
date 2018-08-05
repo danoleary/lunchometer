@@ -2,26 +2,39 @@ package com.lunchometer.api.commandhandlers
 
 import com.lunchometer.shared.Command
 import com.lunchometer.shared.Event
+import com.lunchometer.shared.InternalCommandResponse
 import java.time.DayOfWeek
 import java.time.LocalDateTime
 import java.time.LocalTime
+import java.util.*
 
 fun handle(events: List<Event>, command: Command.AddCardTransaction): InternalCommandResponse {
 
-    val transactionAlreadyAdded = events
-        .filter { it.type == Event.CardTransactionAdded::class.java.simpleName }
-        .any { (it as Event.CardTransactionAdded).transaction.id == command.transaction.id }
+    val transactionCanBeAdded =
+        transactionsHaveBeenRequested(events)
+        && !transactionAlreadyAdded(events, command.transaction.id)
 
-    return when(transactionAlreadyAdded) {
-        true -> InternalCommandResponse(command.id, false, listOf())
-        false -> {
+    return when(transactionCanBeAdded) {
+        false -> InternalCommandResponse(command.id, false, listOf())
+        true -> {
             val transactionAdded = Event.CardTransactionAdded(command.userId, command.transaction)
-            val markedAs = if (command.transaction.created.isWeekdayLunchtime())
-                Event.TransactionMarkedAsLunch(command.userId, transactionAdded.transaction.id) else
-                Event.TransactionMarkedAsNotLunch(command.userId, transactionAdded.transaction.id)
+            val markedAs = when (command.transaction.created.isWeekdayLunchtime()) {
+                true -> Event.TransactionMarkedAsLunch(command.userId, transactionAdded.transaction.id)
+                false -> Event.TransactionMarkedAsNotLunch(command.userId, transactionAdded.transaction.id)
+            }
             return InternalCommandResponse(command.id, true, listOf(transactionAdded, markedAs))
         }
     }
+}
+
+private fun transactionAlreadyAdded(events: List<Event>, commandId: UUID): Boolean {
+    return events
+        .filter { it.type == Event.CardTransactionAdded::class.java.simpleName }
+        .any { (it as Event.CardTransactionAdded).transaction.id == commandId }
+}
+
+private fun transactionsHaveBeenRequested(events: List<Event>): Boolean {
+    return events.any { it.type == Event.CardTransactionRetrievalRequested::class.java.simpleName }
 }
 
 private fun LocalDateTime.isWeekdayLunchtime() =

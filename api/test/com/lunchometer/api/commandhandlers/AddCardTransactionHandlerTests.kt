@@ -7,20 +7,33 @@ import com.lunchometer.api.weekendLunchtime
 import com.lunchometer.shared.Command
 import com.lunchometer.shared.Event
 import org.junit.Test
+import kotlin.test.assertFalse
 import kotlin.test.assertTrue
+
+private const val userId = "aUserId"
 
 class AddCardTransactionHandlerTests {
 
     @Test
-    fun `a transaction created between 12 and 2 on a weekday creates a transaction added and a transaction marked as lunch`() {
-
-        val addCardTransaction = Command.AddCardTransaction("userId", lunchTransaction)
+    fun `a transaction cannot be added before transactions are requested`() {
+        val addCardTransaction = Command.AddCardTransaction(userId, lunchTransaction)
 
         val result = handle(listOf(), addCardTransaction)
 
+        assertFalse(result.success)
+        assertTrue(result.events.isEmpty())
+    }
+
+    @Test
+    fun `a transaction created between 12 and 2 on a weekday creates a transaction added and a transaction marked as lunch`() {
+
+        val addCardTransaction = Command.AddCardTransaction(userId, lunchTransaction)
+
+        val result = handle(cardTransactionsRequested, addCardTransaction)
+
         assertTrue(result.success)
-        assertTrue(result.events.contains(Event.CardTransactionAdded("userId", lunchTransaction)))
-        assertTrue(result.events.contains(Event.TransactionMarkedAsLunch("userId", lunchTransaction.id)))
+        assertTrue(result.events.contains(Event.CardTransactionAdded(userId, lunchTransaction)))
+        assertTrue(result.events.contains(Event.TransactionMarkedAsLunch(userId, lunchTransaction.id)))
         assertTrue(result.events.size == 2)
     }
 
@@ -30,13 +43,13 @@ class AddCardTransactionHandlerTests {
         val transaction = lunchTransaction.copy(created = weekendLunchtime)
 
         val addCardTransaction =
-            Command.AddCardTransaction("userId", transaction)
+            Command.AddCardTransaction(userId, transaction)
 
-        val result = handle(listOf(), addCardTransaction)
+        val result = handle(cardTransactionsRequested, addCardTransaction)
 
         assertTrue(result.success)
-        assertTrue(result.events.contains(Event.CardTransactionAdded("userId", transaction)))
-        assertTrue(result.events.contains(Event.TransactionMarkedAsNotLunch("userId", transaction.id)))
+        assertTrue(result.events.contains(Event.CardTransactionAdded(userId, transaction)))
+        assertTrue(result.events.contains(Event.TransactionMarkedAsNotLunch(userId, transaction.id)))
         assertTrue(result.events.size == 2)
     }
 
@@ -46,13 +59,13 @@ class AddCardTransactionHandlerTests {
         val transaction = lunchTransaction.copy(created = weekdayBeforeLunch)
 
         val addCardTransaction =
-            Command.AddCardTransaction("userId", transaction)
+            Command.AddCardTransaction(userId, transaction)
 
-        val result = handle(listOf(), addCardTransaction)
+        val result = handle(cardTransactionsRequested, addCardTransaction)
 
         assertTrue(result.success)
-        assertTrue(result.events.contains(Event.CardTransactionAdded("userId", transaction)))
-        assertTrue(result.events.contains(Event.TransactionMarkedAsNotLunch("userId", transaction.id)))
+        assertTrue(result.events.contains(Event.CardTransactionAdded(userId, transaction)))
+        assertTrue(result.events.contains(Event.TransactionMarkedAsNotLunch(userId, transaction.id)))
         assertTrue(result.events.size == 2)
     }
 
@@ -62,13 +75,16 @@ class AddCardTransactionHandlerTests {
         val transaction = lunchTransaction.copy(created = weekdayAfterLunch)
 
         val addCardTransaction =
-            Command.AddCardTransaction("userId", transaction)
+            Command.AddCardTransaction(userId, transaction)
 
-        val result = handle(listOf(), addCardTransaction)
+        val result = handle(cardTransactionsRequested, addCardTransaction)
 
         assertTrue(result.success)
-        assertTrue(result.events.contains(Event.CardTransactionAdded("userId", transaction)))
-        assertTrue(result.events.contains(Event.TransactionMarkedAsNotLunch("userId", transaction.id)))
+        assertTrue(result.events.contains(Event.CardTransactionAdded(userId, transaction)))
+        assertTrue(result.events.contains(Event.TransactionMarkedAsNotLunch(userId, transaction.id)))
         assertTrue(result.events.size == 2)
     }
+
+    private val cardTransactionsRequested =
+        listOf(Event.CardTransactionRetrievalRequested(userId))
 }
