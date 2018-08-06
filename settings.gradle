@@ -1,1 +1,1 @@
-include ":api", ":shared", ":starlingintegration"
+include ":api", ":shared", ":starlingintegration", ":domain"

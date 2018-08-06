@@ -1,16 +1,11 @@
-package com.lunchometer.api.kafkaProcessors
+package com.lunchometer.domain.kafkaProcessors
 
 import com.google.gson.Gson
-import com.lunchometer.api.CommandResponseStore
-import com.lunchometer.api.EventStore
-import com.lunchometer.shared.Command
 import com.lunchometer.shared.CommandResponse
 import com.lunchometer.shared.Event
 import com.lunchometer.shared.InternalCommandResponse
-import org.apache.kafka.common.serialization.Serdes
 import org.apache.kafka.streams.processor.MockProcessorContext
-import org.apache.kafka.streams.state.Stores
-import org.junit.jupiter.api.Test
+import org.junit.Test
 import java.util.*
 import kotlin.test.assertEquals
 import kotlin.test.assertFalse
@@ -20,19 +15,10 @@ private const val key = "userid"
 class CommandResponsePublishingProcessorTests {
 
     @Test
-    fun `stores and forwards command response`() {
+    fun `forwards command response`() {
         val processorUnderTest = CommandResponsePublishingProcessor()
         val context = MockProcessorContext()
 
-        val store =
-            Stores.keyValueStoreBuilder(
-                Stores.inMemoryKeyValueStore(CommandResponseStore),
-                Serdes.String(),
-                Serdes.String())
-                .withLoggingDisabled() // Changelog is not supported by MockProcessorContext.
-                .build()
-        store.init(context, store)
-        context.register(store) { _, _ -> Unit}
         processorUnderTest.init(context)
 
         val internalCommandResponse =
@@ -48,8 +34,5 @@ class CommandResponsePublishingProcessorTests {
         assertEquals(forwardedMessage.value,
             Gson().toJson(expectedCommandResponse))
         assertFalse(forwarded.hasNext())
-
-        val storedCommandResponse = store[key]
-        assertEquals(Gson().toJson(listOf(expectedCommandResponse)), storedCommandResponse)
     }
 }

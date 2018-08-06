@@ -4,7 +4,6 @@ import com.google.gson.Gson
 import com.lunchometer.shared.CommandResponse
 import com.lunchometer.shared.*
 import org.apache.kafka.common.serialization.Serdes
-import org.apache.kafka.common.serialization.StringDeserializer
 import org.apache.kafka.common.serialization.StringSerializer
 import org.apache.kafka.streams.StreamsConfig
 import org.apache.kafka.streams.state.KeyValueStore
@@ -12,19 +11,18 @@ import org.junit.Before
 import org.junit.Test
 import org.apache.kafka.streams.test.ConsumerRecordFactory
 import org.apache.kafka.streams.TopologyTestDriver
-import org.apache.kafka.streams.test.OutputVerifier
 import org.junit.After
 import java.util.*
 import kotlin.test.assertEquals
-import kotlin.test.assertNull
 
 class TopologyTests {
 
     private var testDriver: TopologyTestDriver? = null
     private var store: KeyValueStore<String, String>? = null
 
-    private val stringDeserializer = StringDeserializer()
     private val recordFactory = ConsumerRecordFactory<String, String>(StringSerializer(), StringSerializer())
+
+    private val key = "myKey"
 
     @Before
     fun setup() {
@@ -38,84 +36,33 @@ class TopologyTests {
         props.setProperty(StreamsConfig.DEFAULT_VALUE_SERDE_CLASS_CONFIG, Serdes.String()::class.java.name)
         testDriver = TopologyTestDriver(topology, props)
 
-        store = (testDriver as TopologyTestDriver).getKeyValueStore<String, String>(EventStore)
-
+        store = (testDriver as TopologyTestDriver).getKeyValueStore<String, String>(CommandResponseStore)
     }
 
     @Test
-    fun `single new events should be published to events topic`() {
+    fun `command response with no existing state should be stored`() {
 
-        val key = "dan"
-        publishRetrieveCardTransactions(key)
+        val commandResponse = CommandResponse(UUID.randomUUID(), true)
 
-        val expectedNewEvent = Event.CardTransactionRetrievalRequested(key)
+        publishCommandResponse(key, commandResponse)
 
-        OutputVerifier
-            .compareKeyValue((testDriver as TopologyTestDriver)
-                .readOutput(EventTopic, stringDeserializer, stringDeserializer), key, Gson().toJson(expectedNewEvent))
+        val storedCommandResponses = deserializeCommandResponseList(store!!.get(key))
 
-        assertNull((testDriver as TopologyTestDriver).readOutput(EventTopic, stringDeserializer, stringDeserializer))
+        assertEquals(listOf(commandResponse), storedCommandResponses)
     }
 
     @Test
-    fun `single command response should be published to command response topic`() {
+    fun `command response with existing state should be update state`() {
 
-        val key = "dan"
-        val command = Command.RetrieveCardTransactions(key)
+        val commandResponse = CommandResponse(UUID.randomUUID(), true)
+        publishCommandResponse(key, commandResponse)
 
-        publishCommand(key, command)
+        val newCommandResponse = CommandResponse(UUID.randomUUID(), false)
+        publishCommandResponse(key, newCommandResponse)
 
-        val expectedNewEvent = CommandResponse(command.id, true)
+        val storedCommandResponses = deserializeCommandResponseList(store!!.get(key))
 
-        OutputVerifier
-            .compareKeyValue((testDriver as TopologyTestDriver)
-                .readOutput(CommandResponsesTopic, stringDeserializer, stringDeserializer), key, Gson().toJson(expectedNewEvent))
-
-        assertNull((testDriver as TopologyTestDriver).readOutput(CommandResponsesTopic, stringDeserializer, stringDeserializer))
-    }
-
-    @Test
-    fun `multiple new events should be published to events topic`() {
-        val key = "dan"
-
-        publishRetrieveCardTransactions(key)
-
-        val addTransactionCommand = Command.AddCardTransaction(key, lunchTransaction)
-        publishCommand(key, addTransactionCommand)
-
-        val expectedEvent1 = Event.CardTransactionRetrievalRequested(key)
-        val expectedEvent2 = Event.CardTransactionAdded(key, lunchTransaction)
-        val expectedEvent3 = Event.TransactionMarkedAsLunch(key, lunchTransaction.id)
-
-        OutputVerifier
-            .compareKeyValue((testDriver as TopologyTestDriver)
-                .readOutput(EventTopic, stringDeserializer, stringDeserializer), key, Gson().toJson(expectedEvent1))
-
-        OutputVerifier
-            .compareKeyValue((testDriver as TopologyTestDriver)
-                .readOutput(EventTopic, stringDeserializer, stringDeserializer), key, Gson().toJson(expectedEvent2))
-
-        OutputVerifier
-            .compareKeyValue((testDriver as TopologyTestDriver)
-                .readOutput(EventTopic, stringDeserializer, stringDeserializer), key, Gson().toJson(expectedEvent3))
-    }
-
-    @Test
-    fun `new events should be persisted to event store along with existing events`() {
-
-        val key = "dan"
-        publishRetrieveCardTransactions(key)
-        publishAddCardTransaction(key)
-
-        val storedEvents = deserializeEventList(store!!.get(key))
-
-        val expectedEvents = listOf(
-            Event.CardTransactionRetrievalRequested(key),
-            Event.CardTransactionAdded(key, lunchTransaction),
-            Event.TransactionMarkedAsLunch(key, lunchTransaction.id)
-        )
-
-        assertEquals(expectedEvents, storedEvents)
+        assertEquals(listOf(commandResponse, newCommandResponse), storedCommandResponses)
     }
 
     @After
@@ -123,18 +70,9 @@ class TopologyTests {
         testDriver!!.close()
     }
 
-    private fun publishRetrieveCardTransactions(key: String) {
-        val command = Command.RetrieveCardTransactions(key)
-        publishCommand(key, command)
-    }
-
-    private fun publishAddCardTransaction(key: String) {
-        val command = Command.AddCardTransaction(key, lunchTransaction)
-        publishCommand(key, command)
-    }
-
-    private fun publishCommand(key: String, command: Command) {
-        testDriver!!.pipeInput(recordFactory.create(CommandsTopic, key, Gson().toJson(command)))
+    private fun publishCommandResponse(key: String, commandResponse: CommandResponse) {
+        testDriver!!.pipeInput(
+            recordFactory.create(CommandResponsesTopic, key, Gson().toJson(commandResponse)))
     }
 
 }

@@ -1,13 +1,7 @@
-package com.lunchometer.api
+package com.lunchometer.shared
 
 import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
-import com.lunchometer.shared.InternalCommandResponse
-import com.lunchometer.shared.Command
-import com.lunchometer.shared.CommandResponse
-import com.lunchometer.shared.Event
 import org.json.JSONObject
-import org.json.simple.parser.JSONParser
 import java.util.*
 
 fun deserializeEventList(json: String): List<Event> {
@@ -16,7 +10,7 @@ fun deserializeEventList(json: String): List<Event> {
 }
 
 fun deserializeCommand(json: String): Command {
-    val parsed = JSONParser().parse(json) as org.json.simple.JSONObject
+    val parsed = JSONObject(json)
     val type = parsed.get("type") as String
     return when(type) {
         Command.AddCardTransaction::class.java.simpleName -> Gson().fromJson(json, Command.AddCardTransaction::class.java)
@@ -39,6 +33,9 @@ fun deserializeCommandResponseList(json: String): List<CommandResponse> {
     val commandResponses = Gson().fromJson(json, Array<CommandResponse>::class.java)
     return commandResponses.toList()
 }
+
+fun deserializeCommandResponse(json: String) =
+    Gson().fromJson(json, CommandResponse::class.java)
 
 private fun mapToEvent(jobject: JSONObject): Event {
     val type = jobject.getString("type")

@@ -3,7 +3,7 @@ package com.lunchometer.api
 import com.auth0.jwk.JwkProvider
 import com.auth0.jwk.JwkProviderBuilder
 import com.lunchometer.shared.Command
-import com.lunchometer.shared.Event
+import com.lunchometer.shared.deserializeEventList
 import com.typesafe.config.ConfigFactory
 import io.ktor.application.*
 import io.ktor.auth.Authentication
@@ -24,9 +24,7 @@ import org.apache.kafka.streams.KafkaStreams
 import org.apache.kafka.streams.state.QueryableStoreTypes
 import org.apache.kafka.streams.state.ReadOnlyKeyValueStore
 import java.io.*
-import java.math.BigDecimal
 import java.text.DateFormat
-import java.util.*
 import java.util.concurrent.TimeUnit
 
 fun startServer(streams: KafkaStreams) {
@@ -68,7 +66,7 @@ fun startServer(streams: KafkaStreams) {
             authenticate {
                 get("/api") {
                     val store: ReadOnlyKeyValueStore<String, String> =
-                        streams.store(EventStore, QueryableStoreTypes.keyValueStore())
+                        streams.store(CommandResponseStore, QueryableStoreTypes.keyValueStore())
                     val json = store.get("dan")
                     val events = deserializeEventList(json)
                     val groupedTransactions = groupByWeek(events)

@@ -1,8 +1,8 @@
-package com.lunchometer.api
+package com.lunchometer.domain
 
-import com.lunchometer.api.kafkaProcessors.CommandHandlerProcessor
-import com.lunchometer.api.kafkaProcessors.CommandResponsePublishingProcessor
-import com.lunchometer.api.kafkaProcessors.EventPublishingProcessor
+import com.lunchometer.domain.kafkaProcessors.CommandHandlerProcessor
+import com.lunchometer.domain.kafkaProcessors.CommandResponsePublishingProcessor
+import com.lunchometer.domain.kafkaProcessors.EventPublishingProcessor
 import com.lunchometer.shared.CommandResponsesTopic
 import com.lunchometer.shared.CommandsTopic
 import com.lunchometer.shared.EventTopic
@@ -14,7 +14,6 @@ import org.apache.kafka.streams.state.StoreBuilder
 import org.apache.kafka.streams.state.Stores
 
 const val EventStore = "event-store"
-const val CommandResponseStore = "command-response-store"
 
 private const val commandSource = "command-source"
 private const val commandHandlerProcessor = "command-handler"
@@ -28,13 +27,25 @@ fun buildTopology(): Topology {
     val topologyBuilder = Topology()
 
     topologyBuilder
+        // stream from commands topic
         .addSource(commandSource, CommandsTopic)
+
+        // handle command, store events and forward internal command response
         .addProcessor(commandHandlerProcessor, ProcessorSupplier { CommandHandlerProcessor() }, commandSource)
+
+        // add events state store
         .addStateStore(storeBuilder(EventStore), commandHandlerProcessor)
+
+        // forward command response
         .addProcessor(commandResponsePublishingProcessor, ProcessorSupplier { CommandResponsePublishingProcessor() }, commandHandlerProcessor)
-        .addStateStore(storeBuilder(CommandResponseStore), commandResponsePublishingProcessor)
+
+        // forward events
         .addProcessor(eventPublishingProcessor, ProcessorSupplier { EventPublishingProcessor() }, commandHandlerProcessor)
+
+        // publish command responses
         .addSink(commandResponseSink, CommandResponsesTopic, commandResponsePublishingProcessor)
+
+        // publish events
         .addSink(eventSink, EventTopic, eventPublishingProcessor)
 
     return topologyBuilder

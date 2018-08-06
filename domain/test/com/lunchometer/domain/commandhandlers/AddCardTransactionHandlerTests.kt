@@ -1,9 +1,9 @@
-package com.lunchometer.api.commandhandlers
+package com.lunchometer.domain.commandhandlers
 
-import com.lunchometer.api.lunchTransaction
-import com.lunchometer.api.weekdayAfterLunch
-import com.lunchometer.api.weekdayBeforeLunch
-import com.lunchometer.api.weekendLunchtime
+import com.lunchometer.domain.lunchTransaction
+import com.lunchometer.domain.weekdayAfterLunch
+import com.lunchometer.domain.weekdayBeforeLunch
+import com.lunchometer.domain.weekendLunchtime
 import com.lunchometer.shared.Command
 import com.lunchometer.shared.Event
 import org.junit.Test

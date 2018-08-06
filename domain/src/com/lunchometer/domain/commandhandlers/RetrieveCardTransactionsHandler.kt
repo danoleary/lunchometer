@@ -1,4 +1,4 @@
-package com.lunchometer.api.commandhandlers
+package com.lunchometer.domain.commandhandlers
 
 import com.lunchometer.shared.Command
 import com.lunchometer.shared.Event

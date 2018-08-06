@@ -1,11 +1,10 @@
-package com.lunchometer.api.kafkaProcessors
+package com.lunchometer.domain.kafkaProcessors
 
 import com.google.gson.Gson
-import com.lunchometer.api.EventStore
-import com.lunchometer.api.commandhandlers.handle
-import com.lunchometer.api.deserializeCommand
-import com.lunchometer.api.deserializeEventList
-import com.lunchometer.shared.Event
+import com.lunchometer.domain.EventStore
+import com.lunchometer.domain.commandhandlers.handle
+import com.lunchometer.shared.deserializeCommand
+import com.lunchometer.shared.deserializeEventList
 import org.apache.kafka.streams.processor.*
 import org.apache.kafka.streams.state.KeyValueStore
 import java.util.*

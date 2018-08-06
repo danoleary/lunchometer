@@ -1,14 +1,8 @@
-package com.lunchometer.api.kafkaProcessors
+package com.lunchometer.domain.kafkaProcessors
 
 import com.google.gson.Gson
-import com.lunchometer.api.EventStore
-import com.lunchometer.api.commandhandlers.handle
-import com.lunchometer.api.deserializeCommand
-import com.lunchometer.api.deserializeInternalCommandResponse
-import com.lunchometer.shared.Event
+import com.lunchometer.shared.deserializeInternalCommandResponse
 import org.apache.kafka.streams.processor.*
-import org.apache.kafka.streams.state.KeyValueStore
-import java.util.*
 
 class EventPublishingProcessor : Processor<String, String> {
     override fun punctuate(timestamp: Long) {
