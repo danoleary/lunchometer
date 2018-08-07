@@ -18,7 +18,8 @@ import kotlin.test.assertEquals
 class TopologyTests {
 
     private var testDriver: TopologyTestDriver? = null
-    private var store: KeyValueStore<String, String>? = null
+    private var commandResponseStore: KeyValueStore<String, String>? = null
+    private var apiEventStore: KeyValueStore<String, String>? = null
 
     private val recordFactory = ConsumerRecordFactory<String, String>(StringSerializer(), StringSerializer())
 
@@ -36,7 +37,8 @@ class TopologyTests {
         props.setProperty(StreamsConfig.DEFAULT_VALUE_SERDE_CLASS_CONFIG, Serdes.String()::class.java.name)
         testDriver = TopologyTestDriver(topology, props)
 
-        store = (testDriver as TopologyTestDriver).getKeyValueStore<String, String>(CommandResponseStore)
+        commandResponseStore = (testDriver as TopologyTestDriver).getKeyValueStore<String, String>(CommandResponseStore)
+        apiEventStore = (testDriver as TopologyTestDriver).getKeyValueStore<String, String>(ApiEventStore)
     }
 
     @Test
@@ -46,7 +48,7 @@ class TopologyTests {
 
         publishCommandResponse(key, commandResponse)
 
-        val storedCommandResponses = deserializeCommandResponseList(store!!.get(key))
+        val storedCommandResponses = deserializeCommandResponseList(commandResponseStore!!.get(key))
 
         assertEquals(listOf(commandResponse), storedCommandResponses)
     }
@@ -60,9 +62,35 @@ class TopologyTests {
         val newCommandResponse = CommandResponse(UUID.randomUUID(), false)
         publishCommandResponse(key, newCommandResponse)
 
-        val storedCommandResponses = deserializeCommandResponseList(store!!.get(key))
+        val storedCommandResponses = deserializeCommandResponseList(commandResponseStore!!.get(key))
 
         assertEquals(listOf(commandResponse, newCommandResponse), storedCommandResponses)
+    }
+
+    @Test
+    fun `event with no existing state should be stored`() {
+
+        val event = Event.CardTransactionRetrievalRequested(key)
+
+        publishEvent(key, event)
+
+        val storedEvents = deserializeEventList(apiEventStore!!.get(key))
+
+        assertEquals(listOf(event), storedEvents)
+    }
+
+    @Test
+    fun `event with existing state should be update state`() {
+
+        val event = Event.CardTransactionRetrievalRequested(key)
+        publishEvent(key, event)
+
+        val newEvent = Event.CardTransactionAdded(key, lunchTransaction)
+        publishEvent(key, newEvent)
+
+        val storedEvents = deserializeEventList(apiEventStore!!.get(key))
+
+        assertEquals(listOf(event, newEvent), storedEvents)
     }
 
     @After
@@ -73,6 +101,11 @@ class TopologyTests {
     private fun publishCommandResponse(key: String, commandResponse: CommandResponse) {
         testDriver!!.pipeInput(
             recordFactory.create(CommandResponsesTopic, key, Gson().toJson(commandResponse)))
+    }
+
+    private fun publishEvent(key: String, event: Event) {
+        testDriver!!.pipeInput(
+            recordFactory.create(EventTopic, key, Gson().toJson(event)))
     }
 
 }

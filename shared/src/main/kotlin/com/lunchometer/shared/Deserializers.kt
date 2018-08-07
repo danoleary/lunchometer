@@ -9,6 +9,11 @@ fun deserializeEventList(json: String): List<Event> {
     return jsonArray.map { mapToEvent(it as JSONObject) }
 }
 
+fun deserializeEvent(json: String): Event {
+    val event = JSONObject(json)
+    return mapToEvent(event)
+}
+
 fun deserializeCommand(json: String): Command {
     val parsed = JSONObject(json)
     val type = parsed.get("type") as String

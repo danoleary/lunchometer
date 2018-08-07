@@ -11,8 +11,8 @@ private val streamsConfiguration = Properties()
 
 fun main(args: Array<String>) {
 
-    streamsConfiguration.put(StreamsConfig.APPLICATION_ID_CONFIG, "lunchometer-api")
-    streamsConfiguration.put(StreamsConfig.CLIENT_ID_CONFIG, "lunchometer-api")
+    streamsConfiguration.put(StreamsConfig.APPLICATION_ID_CONFIG, "lunchometer-domain")
+    streamsConfiguration.put(StreamsConfig.CLIENT_ID_CONFIG, "lunchometer-domain")
     streamsConfiguration.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers)
     streamsConfiguration.put(StreamsConfig.DEFAULT_KEY_SERDE_CLASS_CONFIG, Serdes.String()::class.java.name)
     streamsConfiguration.put(StreamsConfig.DEFAULT_VALUE_SERDE_CLASS_CONFIG, Serdes.String()::class.java.name)
