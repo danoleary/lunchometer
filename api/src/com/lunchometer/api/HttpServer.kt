@@ -73,7 +73,7 @@ fun startServer(streams: KafkaStreams) {
             authenticate {
                 get("/api") {
                     val store: ReadOnlyKeyValueStore<String, String> =
-                        streams.store(CommandResponseStore, QueryableStoreTypes.keyValueStore())
+                        streams.store(ApiEventStore, QueryableStoreTypes.keyValueStore())
                     val json = store.get("dan")
                     val events = deserializeEventList(json)
                     val groupedTransactions = groupByWeek(events)
