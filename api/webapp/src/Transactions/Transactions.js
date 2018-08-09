@@ -6,6 +6,8 @@ export class Transactions extends Component {
         super(props);
         this.state = { weeks: [], loading: true };
         this.getTransactions();
+        this.getTransactions = this.getTransactions.bind(this);
+        this.downloadTransactions = this.downloadTransactions.bind(this);
     }
 
     getTransactions() {
@@ -25,7 +27,7 @@ export class Transactions extends Component {
             });
     }
 
-    handleClick() {
+    downloadTransactions() {
         var headers = new Headers();
         headers.append('Accept', 'application/json');
         headers.append('Authorization', 'Bearer ' + localStorage.getItem('access_token'));
@@ -36,18 +38,17 @@ export class Transactions extends Component {
         });
 
         fetch(postRequest)
-            .then(response => response.json())
             .then((() => {
-               
+               this.getTransactions();
             }));
-    }
+        }
 
     static renderTransactions(weeks) {
         return (
             <div>
                 {weeks.map(week => 
-                    <div>
-                    <h1 key={week.id}>Week starting {week.startDate.toString()}</h1>
+                    <div key={week.id}>
+                    <h1>Week starting {week.startDate.toString()}</h1>
                  
                     {week.transactions.map(tran =>
                         <p key={tran.id}>
@@ -64,9 +65,12 @@ export class Transactions extends Component {
     render() {
         let contents =
             <div>
-            <button onClick={this.handleClick}>
-                    Download transaction history
-                </button>
+            <button onClick={this.downloadTransactions}>
+                Download transaction history
+            </button>
+            <button onClick={this.getTransactions}>
+                Show transaction history
+            </button>
             {Transactions.renderTransactions(this.state.weeks)}
             </div>
 

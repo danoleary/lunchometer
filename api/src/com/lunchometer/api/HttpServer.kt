@@ -32,14 +32,14 @@ import java.text.DateFormat
 import java.util.*
 import java.util.concurrent.TimeUnit
 
+val logger = KotlinLogging.logger {}
+
 fun startServer(streams: KafkaStreams) {
 
     val config = HoconApplicationConfig(ConfigFactory.load())
     val port = config.property("ktor.deployment.port").getString().toInt()
     val domain = config.property("jwt.domain").getString()
     val audience = config.property("jwt.audience").getString()
-
-    val logger = KotlinLogging.logger {}
 
     val server = embeddedServer(Netty, port = port) {
 
@@ -72,19 +72,18 @@ fun startServer(streams: KafkaStreams) {
         routing {
             authenticate {
                 get("/api") {
-                    val store: ReadOnlyKeyValueStore<String, String> =
-                        streams.store(ApiEventStore, QueryableStoreTypes.keyValueStore())
-                    val json = store.get("dan")
-                    val events = deserializeEventList(json)
-                    val groupedTransactions = groupByWeek(events)
+                    logger.info { "Starting get request" }
+                    val groupedTransactions = retryIO { getTransactionsByWeek(streams, "dan") }
                     call.respond(groupedTransactions)
+                    logger.info { "Finishign end request" }
                 }
                 post("/fetchTransactions") {
                     logger.info { "Starting fetchTransactions post request" }
                     val userId = "dan"
                     val command = Command.RetrieveCardTransactions(userId)
-                    logger.info { "Producing comman with id ${command.id}" }
+                    logger.info { "Producing command with id ${command.id}" }
                     produce("commands", userId, command)
+                    logger.info { "Produced command with id ${command.id}" }
                     val response = retryIO { getCommandResponse(streams, userId, command.id) }
                     when(response) {
                         null ->
@@ -135,7 +134,19 @@ private fun getCommandResponse(streams: KafkaStreams, key: String, commandId: UU
             return deserialized.singleOrNull{ it.commandId == commandId }
         }
     }
+}
 
+private fun getTransactionsByWeek(streams: KafkaStreams, key: String): List<TransactionWeekDto> {
+    val store: ReadOnlyKeyValueStore<String, String> =
+        streams.store(ApiEventStore, QueryableStoreTypes.keyValueStore())
+    logger.info { "Getting events from store" }
+    val json = store.get(key)
+    logger.info { "Retrieved events from store" }
+    if(json === null) {
+        return listOf()
+    }
+    val events = deserializeEventList(json)
+    return groupByWeek(events)
 }
 
 suspend fun <T> retryIO(
