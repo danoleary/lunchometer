@@ -6,3 +6,4 @@ target
 out/
 node_modules/
 full-stack/
+.env
