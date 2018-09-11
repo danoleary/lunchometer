@@ -1,4 +1,4 @@
-package com.lunchometer.api
+package com.lunchometer.api.utils
 
 import com.google.gson.Gson
 import org.apache.kafka.clients.producer.KafkaProducer;
