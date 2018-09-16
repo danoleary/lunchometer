@@ -14,13 +14,15 @@ fun handle(events: List<Event>, command: Command.AddCardTransaction): InternalCo
         transactionsHaveBeenRequested(events)
         && !transactionAlreadyAdded(events, command.transaction.id)
 
+    val timestamp = LocalDateTime.now()
+
     return when(transactionCanBeAdded) {
         false -> InternalCommandResponse(command.id, false, listOf())
         true -> {
-            val transactionAdded = Event.CardTransactionAdded(command.userId, command.transaction)
+            val transactionAdded = Event.CardTransactionAdded(command.userId, timestamp, command.transaction)
             val markedAs = when (command.transaction.created.isWeekdayLunchtime()) {
-                true -> Event.TransactionMarkedAsLunch(command.userId, transactionAdded.transaction.id)
-                false -> Event.TransactionMarkedAsNotLunch(command.userId, transactionAdded.transaction.id)
+                true -> Event.TransactionMarkedAsLunch(command.userId, timestamp, transactionAdded.transaction.id)
+                false -> Event.TransactionMarkedAsNotLunch(command.userId, timestamp, transactionAdded.transaction.id)
             }
             return InternalCommandResponse(command.id, true, listOf(transactionAdded, markedAs))
         }

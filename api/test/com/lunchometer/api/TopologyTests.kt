@@ -12,6 +12,7 @@ import org.junit.Test
 import org.apache.kafka.streams.test.ConsumerRecordFactory
 import org.apache.kafka.streams.TopologyTestDriver
 import org.junit.After
+import java.time.LocalDateTime
 import java.util.*
 import kotlin.test.assertEquals
 
@@ -70,7 +71,7 @@ class TopologyTests {
     @Test
     fun `event with no existing state should be stored`() {
 
-        val event = Event.CardTransactionRetrievalRequested(key)
+        val event = Event.CardTransactionRetrievalRequested(key, LocalDateTime.now())
 
         publishEvent(key, event)
 
@@ -82,10 +83,10 @@ class TopologyTests {
     @Test
     fun `event with existing state should be update state`() {
 
-        val event = Event.CardTransactionRetrievalRequested(key)
+        val event = Event.CardTransactionRetrievalRequested(key, LocalDateTime.now())
         publishEvent(key, event)
 
-        val newEvent = Event.CardTransactionAdded(key, lunchTransaction)
+        val newEvent = Event.CardTransactionAdded(key, LocalDateTime.now(), lunchTransaction)
         publishEvent(key, newEvent)
 
         val storedEvents = deserializeEventList(apiEventStore!!.get(key))

@@ -1,0 +1,5485 @@
+[
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 43,
+            "second": 47,
+            "nano": 640000000
+          }
+        },
+        "type": "CardTransactionRetrievalRequested"
+      },
+      "partition": 0,
+      "offset": 0
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 23,
+            "nano": 490000000
+          }
+        },
+        "transaction": {
+          "id": "09d31444-e030-4174-8231-5350893f282d",
+          "amount": -2.8,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 10,
+              "day": 29
+            },
+            "time": {
+              "hour": 15,
+              "minute": 31,
+              "second": 13,
+              "nano": 206000000
+            }
+          },
+          "retailer": "TfL"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 1
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 23,
+            "nano": 490000000
+          }
+        },
+        "id": "09d31444-e030-4174-8231-5350893f282d",
+        "type": "TransactionMarkedAsNotLunch"
+      },
+      "partition": 0,
+      "offset": 2
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 23,
+            "nano": 647000000
+          }
+        },
+        "transaction": {
+          "id": "3ab03b2a-bd04-4bf7-9f6c-78cc1837a0f8",
+          "amount": -25.18,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 10,
+              "day": 29
+            },
+            "time": {
+              "hour": 16,
+              "minute": 6,
+              "second": 28,
+              "nano": 240000000
+            }
+          },
+          "retailer": "Tesco"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 3
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 23,
+            "nano": 647000000
+          }
+        },
+        "id": "3ab03b2a-bd04-4bf7-9f6c-78cc1837a0f8",
+        "type": "TransactionMarkedAsNotLunch"
+      },
+      "partition": 0,
+      "offset": 4
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 23,
+            "nano": 698000000
+          }
+        },
+        "transaction": {
+          "id": "4102bcbb-9476-4531-8429-db72dbe67384",
+          "amount": -1.5,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 10,
+              "day": 29
+            },
+            "time": {
+              "hour": 22,
+              "minute": 2,
+              "second": 27,
+              "nano": 820000000
+            }
+          },
+          "retailer": "TfL"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 5
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 23,
+            "nano": 698000000
+          }
+        },
+        "id": "4102bcbb-9476-4531-8429-db72dbe67384",
+        "type": "TransactionMarkedAsNotLunch"
+      },
+      "partition": 0,
+      "offset": 6
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 23,
+            "nano": 795000000
+          }
+        },
+        "transaction": {
+          "id": "cdebaa01-c755-48ab-b501-bab71aa9e2c5",
+          "amount": -11.71,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 10,
+              "day": 30
+            },
+            "time": {
+              "hour": 17,
+              "minute": 54,
+              "second": 40,
+              "nano": 66000000
+            }
+          },
+          "retailer": "Tesco"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 7
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 23,
+            "nano": 795000000
+          }
+        },
+        "id": "cdebaa01-c755-48ab-b501-bab71aa9e2c5",
+        "type": "TransactionMarkedAsNotLunch"
+      },
+      "partition": 0,
+      "offset": 8
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 23,
+            "nano": 930000000
+          }
+        },
+        "transaction": {
+          "id": "b4bda318-7951-48e9-881f-b4c0df54566f",
+          "amount": -4.2,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 10,
+              "day": 31
+            },
+            "time": {
+              "hour": 13,
+              "minute": 38,
+              "second": 16,
+              "nano": 626000000
+            }
+          },
+          "retailer": "Marks & Spencer"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 9
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 23,
+            "nano": 930000000
+          }
+        },
+        "id": "b4bda318-7951-48e9-881f-b4c0df54566f",
+        "type": "TransactionMarkedAsLunch"
+      },
+      "partition": 0,
+      "offset": 10
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 23,
+            "nano": 997000000
+          }
+        },
+        "transaction": {
+          "id": "76289b89-9292-458f-a4a1-b11ce8772fee",
+          "amount": -10.08,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 10,
+              "day": 31
+            },
+            "time": {
+              "hour": 17,
+              "minute": 54,
+              "second": 15,
+              "nano": 628000000
+            }
+          },
+          "retailer": "Tesco"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 11
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 23,
+            "nano": 997000000
+          }
+        },
+        "id": "76289b89-9292-458f-a4a1-b11ce8772fee",
+        "type": "TransactionMarkedAsNotLunch"
+      },
+      "partition": 0,
+      "offset": 12
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 24,
+            "nano": 99000000
+          }
+        },
+        "transaction": {
+          "id": "e40bd8ee-ab08-475b-ba15-62aae770f99f",
+          "amount": -7,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 11,
+              "day": 1
+            },
+            "time": {
+              "hour": 12,
+              "minute": 37,
+              "second": 12,
+              "nano": 915000000
+            }
+          },
+          "retailer": "Wyndham House Butchers"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 13
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 24,
+            "nano": 99000000
+          }
+        },
+        "id": "e40bd8ee-ab08-475b-ba15-62aae770f99f",
+        "type": "TransactionMarkedAsLunch"
+      },
+      "partition": 0,
+      "offset": 14
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 24,
+            "nano": 242000000
+          }
+        },
+        "transaction": {
+          "id": "71049ae8-2ce9-4c9e-9444-b409d679e17e",
+          "amount": -6.84,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 11,
+              "day": 1
+            },
+            "time": {
+              "hour": 18,
+              "minute": 17,
+              "second": 48,
+              "nano": 10000000
+            }
+          },
+          "retailer": "Tesco"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 15
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 24,
+            "nano": 242000000
+          }
+        },
+        "id": "71049ae8-2ce9-4c9e-9444-b409d679e17e",
+        "type": "TransactionMarkedAsNotLunch"
+      },
+      "partition": 0,
+      "offset": 16
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 24,
+            "nano": 302000000
+          }
+        },
+        "transaction": {
+          "id": "fa9b8e50-7d03-4d20-913f-40c1149593ed",
+          "amount": -1.59,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 11,
+              "day": 1
+            },
+            "time": {
+              "hour": 18,
+              "minute": 31,
+              "second": 43,
+              "nano": 685000000
+            }
+          },
+          "retailer": "Fine Life Shopper"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 17
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 24,
+            "nano": 302000000
+          }
+        },
+        "id": "fa9b8e50-7d03-4d20-913f-40c1149593ed",
+        "type": "TransactionMarkedAsNotLunch"
+      },
+      "partition": 0,
+      "offset": 18
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 24,
+            "nano": 331000000
+          }
+        },
+        "transaction": {
+          "id": "02e8ed13-12fc-4eae-b409-a8bdec3331c7",
+          "amount": -8,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 11,
+              "day": 2
+            },
+            "time": {
+              "hour": 12,
+              "minute": 23,
+              "second": 6,
+              "nano": 838000000
+            }
+          },
+          "retailer": "Alexander Pashby"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 19
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 24,
+            "nano": 331000000
+          }
+        },
+        "id": "02e8ed13-12fc-4eae-b409-a8bdec3331c7",
+        "type": "TransactionMarkedAsLunch"
+      },
+      "partition": 0,
+      "offset": 20
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 24,
+            "nano": 410000000
+          }
+        },
+        "transaction": {
+          "id": "51f6dee4-b0fd-4235-8d84-ef33b8913e51",
+          "amount": -8,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 11,
+              "day": 3
+            },
+            "time": {
+              "hour": 13,
+              "minute": 5,
+              "second": 38,
+              "nano": 756000000
+            }
+          },
+          "retailer": "Bian Dang London"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 21
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 24,
+            "nano": 410000000
+          }
+        },
+        "id": "51f6dee4-b0fd-4235-8d84-ef33b8913e51",
+        "type": "TransactionMarkedAsLunch"
+      },
+      "partition": 0,
+      "offset": 22
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 24,
+            "nano": 451000000
+          }
+        },
+        "transaction": {
+          "id": "daa69f3e-60b9-4aab-8734-35eaf8f251f6",
+          "amount": -3,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 11,
+              "day": 3
+            },
+            "time": {
+              "hour": 18,
+              "minute": 16,
+              "second": 50,
+              "nano": 207000000
+            }
+          },
+          "retailer": "Paperchase"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 23
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 24,
+            "nano": 451000000
+          }
+        },
+        "id": "daa69f3e-60b9-4aab-8734-35eaf8f251f6",
+        "type": "TransactionMarkedAsNotLunch"
+      },
+      "partition": 0,
+      "offset": 24
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 24,
+            "nano": 570000000
+          }
+        },
+        "transaction": {
+          "id": "a6ce035c-04cc-4a19-9333-cffc54b73fbf",
+          "amount": -21.05,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 11,
+              "day": 3
+            },
+            "time": {
+              "hour": 21,
+              "minute": 25,
+              "second": 57,
+              "nano": 748000000
+            }
+          },
+          "retailer": "Sainsbury's"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 25
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 24,
+            "nano": 570000000
+          }
+        },
+        "id": "a6ce035c-04cc-4a19-9333-cffc54b73fbf",
+        "type": "TransactionMarkedAsNotLunch"
+      },
+      "partition": 0,
+      "offset": 26
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 24,
+            "nano": 604000000
+          }
+        },
+        "transaction": {
+          "id": "fc40e6b6-87a5-4ce3-9849-21b111136937",
+          "amount": -22.5,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 11,
+              "day": 4
+            },
+            "time": {
+              "hour": 18,
+              "minute": 22,
+              "second": 39,
+              "nano": 826000000
+            }
+          },
+          "retailer": "Water Lane Boathouse"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 27
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 24,
+            "nano": 604000000
+          }
+        },
+        "id": "fc40e6b6-87a5-4ce3-9849-21b111136937",
+        "type": "TransactionMarkedAsNotLunch"
+      },
+      "partition": 0,
+      "offset": 28
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 24,
+            "nano": 718000000
+          }
+        },
+        "transaction": {
+          "id": "38292c28-4738-42c8-8100-89ad4532f742",
+          "amount": -31.9,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 11,
+              "day": 4
+            },
+            "time": {
+              "hour": 19,
+              "minute": 17,
+              "second": 11,
+              "nano": 185000000
+            }
+          },
+          "retailer": "Water Lane Boathouse"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 29
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 24,
+            "nano": 718000000
+          }
+        },
+        "id": "38292c28-4738-42c8-8100-89ad4532f742",
+        "type": "TransactionMarkedAsNotLunch"
+      },
+      "partition": 0,
+      "offset": 30
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 24,
+            "nano": 784000000
+          }
+        },
+        "transaction": {
+          "id": "78142f27-2025-43a3-8fbe-b47177283263",
+          "amount": -19.45,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 11,
+              "day": 4
+            },
+            "time": {
+              "hour": 20,
+              "minute": 1,
+              "second": 29,
+              "nano": 159000000
+            }
+          },
+          "retailer": "Water Lane Boathouse"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 31
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 24,
+            "nano": 784000000
+          }
+        },
+        "id": "78142f27-2025-43a3-8fbe-b47177283263",
+        "type": "TransactionMarkedAsNotLunch"
+      },
+      "partition": 0,
+      "offset": 32
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 24,
+            "nano": 845000000
+          }
+        },
+        "transaction": {
+          "id": "0bc66e7f-d567-4faf-8f03-5b67e0385949",
+          "amount": -10.5,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 11,
+              "day": 4
+            },
+            "time": {
+              "hour": 22,
+              "minute": 54,
+              "second": 37,
+              "nano": 104000000
+            }
+          },
+          "retailer": "Water Lane Boathouse"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 33
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 24,
+            "nano": 845000000
+          }
+        },
+        "id": "0bc66e7f-d567-4faf-8f03-5b67e0385949",
+        "type": "TransactionMarkedAsNotLunch"
+      },
+      "partition": 0,
+      "offset": 34
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 24,
+            "nano": 914000000
+          }
+        },
+        "transaction": {
+          "id": "8f70fa88-c041-49a4-8b12-51c601f1e5ae",
+          "amount": -14,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 11,
+              "day": 5
+            },
+            "time": {
+              "hour": 0,
+              "minute": 37,
+              "second": 7,
+              "nano": 312000000
+            }
+          },
+          "retailer": "The Shed Bar"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 35
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 24,
+            "nano": 914000000
+          }
+        },
+        "id": "8f70fa88-c041-49a4-8b12-51c601f1e5ae",
+        "type": "TransactionMarkedAsNotLunch"
+      },
+      "partition": 0,
+      "offset": 36
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 24,
+            "nano": 996000000
+          }
+        },
+        "transaction": {
+          "id": "d96b95af-cc34-4bb0-8fd0-bfaaac6d973a",
+          "amount": -14.72,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 11,
+              "day": 5
+            },
+            "time": {
+              "hour": 2,
+              "minute": 9,
+              "second": 59,
+              "nano": 259000000
+            }
+          },
+          "retailer": "McDonald's"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 37
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 24,
+            "nano": 996000000
+          }
+        },
+        "id": "d96b95af-cc34-4bb0-8fd0-bfaaac6d973a",
+        "type": "TransactionMarkedAsNotLunch"
+      },
+      "partition": 0,
+      "offset": 38
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 25,
+            "nano": 90000000
+          }
+        },
+        "transaction": {
+          "id": "7faf7fcb-bd39-4928-9e5c-5b72551943bb",
+          "amount": -4.47,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 11,
+              "day": 5
+            },
+            "time": {
+              "hour": 23,
+              "minute": 39,
+              "second": 36,
+              "nano": 895000000
+            }
+          },
+          "retailer": "A N"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 39
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 25,
+            "nano": 90000000
+          }
+        },
+        "id": "7faf7fcb-bd39-4928-9e5c-5b72551943bb",
+        "type": "TransactionMarkedAsNotLunch"
+      },
+      "partition": 0,
+      "offset": 40
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 25,
+            "nano": 198000000
+          }
+        },
+        "transaction": {
+          "id": "fa1f8d1c-80dc-4f58-ba9f-6c6dc4686469",
+          "amount": -2.4,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 11,
+              "day": 6
+            },
+            "time": {
+              "hour": 12,
+              "minute": 44,
+              "second": 28,
+              "nano": 876000000
+            }
+          },
+          "retailer": "TfL"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 41
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 25,
+            "nano": 198000000
+          }
+        },
+        "id": "fa1f8d1c-80dc-4f58-ba9f-6c6dc4686469",
+        "type": "TransactionMarkedAsLunch"
+      },
+      "partition": 0,
+      "offset": 42
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 25,
+            "nano": 263000000
+          }
+        },
+        "transaction": {
+          "id": "f1c89ad9-3f1d-4dd2-a1dd-9813c7834b4a",
+          "amount": -7,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 11,
+              "day": 6
+            },
+            "time": {
+              "hour": 12,
+              "minute": 52,
+              "second": 47,
+              "nano": 266000000
+            }
+          },
+          "retailer": "Tesco"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 43
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 25,
+            "nano": 263000000
+          }
+        },
+        "id": "f1c89ad9-3f1d-4dd2-a1dd-9813c7834b4a",
+        "type": "TransactionMarkedAsLunch"
+      },
+      "partition": 0,
+      "offset": 44
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 25,
+            "nano": 385000000
+          }
+        },
+        "transaction": {
+          "id": "db478558-e51f-408a-b56e-2a68bf202df0",
+          "amount": -2.4,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 11,
+              "day": 6
+            },
+            "time": {
+              "hour": 17,
+              "minute": 42,
+              "second": 6,
+              "nano": 915000000
+            }
+          },
+          "retailer": "TfL"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 45
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 25,
+            "nano": 385000000
+          }
+        },
+        "id": "db478558-e51f-408a-b56e-2a68bf202df0",
+        "type": "TransactionMarkedAsNotLunch"
+      },
+      "partition": 0,
+      "offset": 46
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 25,
+            "nano": 461000000
+          }
+        },
+        "transaction": {
+          "id": "1fb1f2e4-1912-4cde-9bd6-2a2d6d0123b9",
+          "amount": -9.55,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 11,
+              "day": 6
+            },
+            "time": {
+              "hour": 18,
+              "minute": 26,
+              "second": 44,
+              "nano": 366000000
+            }
+          },
+          "retailer": "Tesco"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 47
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 25,
+            "nano": 461000000
+          }
+        },
+        "id": "1fb1f2e4-1912-4cde-9bd6-2a2d6d0123b9",
+        "type": "TransactionMarkedAsNotLunch"
+      },
+      "partition": 0,
+      "offset": 48
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 25,
+            "nano": 612000000
+          }
+        },
+        "transaction": {
+          "id": "4d8e7f2a-9e06-463c-ac3b-b473575865df",
+          "amount": -3.26,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 11,
+              "day": 8
+            },
+            "time": {
+              "hour": 12,
+              "minute": 31,
+              "second": 38,
+              "nano": 997000000
+            }
+          },
+          "retailer": "Waitrose"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 49
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 25,
+            "nano": 612000000
+          }
+        },
+        "id": "4d8e7f2a-9e06-463c-ac3b-b473575865df",
+        "type": "TransactionMarkedAsLunch"
+      },
+      "partition": 0,
+      "offset": 50
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 25,
+            "nano": 702000000
+          }
+        },
+        "transaction": {
+          "id": "35d5b29e-7874-4ca2-907c-c0a1d69b22b7",
+          "amount": -40,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 11,
+              "day": 8
+            },
+            "time": {
+              "hour": 18,
+              "minute": 31,
+              "second": 15,
+              "nano": 937000000
+            }
+          },
+          "retailer": "Cash Machine"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 51
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 25,
+            "nano": 702000000
+          }
+        },
+        "id": "35d5b29e-7874-4ca2-907c-c0a1d69b22b7",
+        "type": "TransactionMarkedAsNotLunch"
+      },
+      "partition": 0,
+      "offset": 52
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 25,
+            "nano": 911000000
+          }
+        },
+        "transaction": {
+          "id": "d6969fde-00ba-45f3-afde-daf05697f052",
+          "amount": -3.5,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 11,
+              "day": 9
+            },
+            "time": {
+              "hour": 12,
+              "minute": 49,
+              "second": 49,
+              "nano": 645000000
+            }
+          },
+          "retailer": "Pret A Manger"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 53
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 25,
+            "nano": 911000000
+          }
+        },
+        "id": "d6969fde-00ba-45f3-afde-daf05697f052",
+        "type": "TransactionMarkedAsLunch"
+      },
+      "partition": 0,
+      "offset": 54
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 26,
+            "nano": 6000000
+          }
+        },
+        "transaction": {
+          "id": "a05e74b7-b733-4174-98b0-e15f508c4d54",
+          "amount": -6.45,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 11,
+              "day": 9
+            },
+            "time": {
+              "hour": 17,
+              "minute": 43,
+              "second": 51,
+              "nano": 710000000
+            }
+          },
+          "retailer": "Marks & Spencer"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 55
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 26,
+            "nano": 6000000
+          }
+        },
+        "id": "a05e74b7-b733-4174-98b0-e15f508c4d54",
+        "type": "TransactionMarkedAsNotLunch"
+      },
+      "partition": 0,
+      "offset": 56
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 26,
+            "nano": 216000000
+          }
+        },
+        "transaction": {
+          "id": "8f3caa93-8327-49a5-af20-5f7f289e5a4e",
+          "amount": -20,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 11,
+              "day": 9
+            },
+            "time": {
+              "hour": 18,
+              "minute": 27,
+              "second": 19,
+              "nano": 365000000
+            }
+          },
+          "retailer": "Udemy"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 57
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 26,
+            "nano": 216000000
+          }
+        },
+        "id": "8f3caa93-8327-49a5-af20-5f7f289e5a4e",
+        "type": "TransactionMarkedAsNotLunch"
+      },
+      "partition": 0,
+      "offset": 58
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 26,
+            "nano": 300000000
+          }
+        },
+        "transaction": {
+          "id": "bf185567-c4f3-4160-a1ad-d41d3fa2de61",
+          "amount": -14.1,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 11,
+              "day": 10
+            },
+            "time": {
+              "hour": 12,
+              "minute": 49,
+              "second": 29,
+              "nano": 840000000
+            }
+          },
+          "retailer": "The George Inn"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 59
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 26,
+            "nano": 300000000
+          }
+        },
+        "id": "bf185567-c4f3-4160-a1ad-d41d3fa2de61",
+        "type": "TransactionMarkedAsLunch"
+      },
+      "partition": 0,
+      "offset": 60
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 26,
+            "nano": 634000000
+          }
+        },
+        "transaction": {
+          "id": "ea843d57-0175-49fa-a578-b76060dc5ca0",
+          "amount": -6.3,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 11,
+              "day": 10
+            },
+            "time": {
+              "hour": 13,
+              "minute": 36,
+              "second": 40,
+              "nano": 426000000
+            }
+          },
+          "retailer": "Shrigley's Moroccan Café"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 61
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 26,
+            "nano": 634000000
+          }
+        },
+        "id": "ea843d57-0175-49fa-a578-b76060dc5ca0",
+        "type": "TransactionMarkedAsLunch"
+      },
+      "partition": 0,
+      "offset": 62
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 26,
+            "nano": 848000000
+          }
+        },
+        "transaction": {
+          "id": "031bf183-a2a4-404b-90c3-bdd1695baab0",
+          "amount": -7.3,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 11,
+              "day": 11
+            },
+            "time": {
+              "hour": 12,
+              "minute": 41,
+              "second": 34,
+              "nano": 963000000
+            }
+          },
+          "retailer": "Trainline"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 63
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 26,
+            "nano": 848000000
+          }
+        },
+        "id": "031bf183-a2a4-404b-90c3-bdd1695baab0",
+        "type": "TransactionMarkedAsNotLunch"
+      },
+      "partition": 0,
+      "offset": 64
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 27,
+            "nano": 57000000
+          }
+        },
+        "transaction": {
+          "id": "e60d755b-c9f7-4afb-b963-c43bfd63c8c1",
+          "amount": -7.21,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 11,
+              "day": 11
+            },
+            "time": {
+              "hour": 16,
+              "minute": 55,
+              "second": 41,
+              "nano": 494000000
+            }
+          },
+          "retailer": "he Benjamin Huntsman "
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 65
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 27,
+            "nano": 57000000
+          }
+        },
+        "id": "e60d755b-c9f7-4afb-b963-c43bfd63c8c1",
+        "type": "TransactionMarkedAsNotLunch"
+      },
+      "partition": 0,
+      "offset": 66
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 27,
+            "nano": 215000000
+          }
+        },
+        "transaction": {
+          "id": "32fe7b0b-a734-430d-af3b-fd9b795ffb8d",
+          "amount": -16.3,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 11,
+              "day": 11
+            },
+            "time": {
+              "hour": 19,
+              "minute": 18,
+              "second": 2,
+              "nano": 101000000
+            }
+          },
+          "retailer": "Sheffield Tap"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 67
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 27,
+            "nano": 215000000
+          }
+        },
+        "id": "32fe7b0b-a734-430d-af3b-fd9b795ffb8d",
+        "type": "TransactionMarkedAsNotLunch"
+      },
+      "partition": 0,
+      "offset": 68
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 27,
+            "nano": 349000000
+          }
+        },
+        "transaction": {
+          "id": "502c8d0a-98b1-47e6-9987-4f9d8b6e5c7d",
+          "amount": -48.7,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 11,
+              "day": 12
+            },
+            "time": {
+              "hour": 16,
+              "minute": 18,
+              "second": 14,
+              "nano": 199000000
+            }
+          },
+          "retailer": "Trainline"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 69
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 27,
+            "nano": 349000000
+          }
+        },
+        "id": "502c8d0a-98b1-47e6-9987-4f9d8b6e5c7d",
+        "type": "TransactionMarkedAsNotLunch"
+      },
+      "partition": 0,
+      "offset": 70
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 27,
+            "nano": 540000000
+          }
+        },
+        "transaction": {
+          "id": "4f1e22cb-6eff-4106-bc0f-ae43aa302947",
+          "amount": -20.05,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 11,
+              "day": 12
+            },
+            "time": {
+              "hour": 16,
+              "minute": 23,
+              "second": 23,
+              "nano": 698000000
+            }
+          },
+          "retailer": "Trainline"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 71
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 27,
+            "nano": 540000000
+          }
+        },
+        "id": "4f1e22cb-6eff-4106-bc0f-ae43aa302947",
+        "type": "TransactionMarkedAsNotLunch"
+      },
+      "partition": 0,
+      "offset": 72
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 27,
+            "nano": 624000000
+          }
+        },
+        "transaction": {
+          "id": "9820370a-08bd-412f-ac4a-796ca2c6e558",
+          "amount": -6.5,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 11,
+              "day": 12
+            },
+            "time": {
+              "hour": 20,
+              "minute": 1,
+              "second": 30,
+              "nano": 282000000
+            }
+          },
+          "retailer": "Virgin Trains"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 73
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 27,
+            "nano": 624000000
+          }
+        },
+        "id": "9820370a-08bd-412f-ac4a-796ca2c6e558",
+        "type": "TransactionMarkedAsNotLunch"
+      },
+      "partition": 0,
+      "offset": 74
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 27,
+            "nano": 720000000
+          }
+        },
+        "transaction": {
+          "id": "a448aa12-d224-4ad0-8109-03c01ee5fc1f",
+          "amount": -2.4,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 11,
+              "day": 12
+            },
+            "time": {
+              "hour": 20,
+              "minute": 41,
+              "second": 48,
+              "nano": 27000000
+            }
+          },
+          "retailer": "TfL"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 75
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 27,
+            "nano": 720000000
+          }
+        },
+        "id": "a448aa12-d224-4ad0-8109-03c01ee5fc1f",
+        "type": "TransactionMarkedAsNotLunch"
+      },
+      "partition": 0,
+      "offset": 76
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 27,
+            "nano": 826000000
+          }
+        },
+        "transaction": {
+          "id": "dbda18d9-7372-4674-986d-0c59e6197120",
+          "amount": -2.68,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 11,
+              "day": 12
+            },
+            "time": {
+              "hour": 21,
+              "minute": 10,
+              "second": 49,
+              "nano": 682000000
+            }
+          },
+          "retailer": "Sainsbury's"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 77
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 27,
+            "nano": 826000000
+          }
+        },
+        "id": "dbda18d9-7372-4674-986d-0c59e6197120",
+        "type": "TransactionMarkedAsNotLunch"
+      },
+      "partition": 0,
+      "offset": 78
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 27,
+            "nano": 927000000
+          }
+        },
+        "transaction": {
+          "id": "c5836f3b-6d92-4d18-a228-0d3ec517e0d4",
+          "amount": -3,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 11,
+              "day": 13
+            },
+            "time": {
+              "hour": 13,
+              "minute": 13,
+              "second": 9,
+              "nano": 66000000
+            }
+          },
+          "retailer": "Tesco"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 79
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 27,
+            "nano": 927000000
+          }
+        },
+        "id": "c5836f3b-6d92-4d18-a228-0d3ec517e0d4",
+        "type": "TransactionMarkedAsLunch"
+      },
+      "partition": 0,
+      "offset": 80
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 27,
+            "nano": 990000000
+          }
+        },
+        "transaction": {
+          "id": "82749098-caf4-43f4-b5ec-b9985849441a",
+          "amount": -10.35,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 11,
+              "day": 13
+            },
+            "time": {
+              "hour": 18,
+              "minute": 56,
+              "second": 2,
+              "nano": 914000000
+            }
+          },
+          "retailer": "Tesco"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 81
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 27,
+            "nano": 990000000
+          }
+        },
+        "id": "82749098-caf4-43f4-b5ec-b9985849441a",
+        "type": "TransactionMarkedAsNotLunch"
+      },
+      "partition": 0,
+      "offset": 82
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 28,
+            "nano": 75000000
+          }
+        },
+        "transaction": {
+          "id": "17a56ee5-7162-4ca3-b99e-c73286295e3d",
+          "amount": -6.45,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 11,
+              "day": 14
+            },
+            "time": {
+              "hour": 12,
+              "minute": 44,
+              "second": 6,
+              "nano": 602000000
+            }
+          },
+          "retailer": "Shrigley's Moroccan Café"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 83
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 28,
+            "nano": 75000000
+          }
+        },
+        "id": "17a56ee5-7162-4ca3-b99e-c73286295e3d",
+        "type": "TransactionMarkedAsLunch"
+      },
+      "partition": 0,
+      "offset": 84
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 28,
+            "nano": 142000000
+          }
+        },
+        "transaction": {
+          "id": "1dc06aec-3cd1-4ced-9754-0bb99ff702a4",
+          "amount": -10.42,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 11,
+              "day": 14
+            },
+            "time": {
+              "hour": 18,
+              "minute": 24,
+              "second": 40,
+              "nano": 751000000
+            }
+          },
+          "retailer": "Marks & Spencer"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 85
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 28,
+            "nano": 142000000
+          }
+        },
+        "id": "1dc06aec-3cd1-4ced-9754-0bb99ff702a4",
+        "type": "TransactionMarkedAsNotLunch"
+      },
+      "partition": 0,
+      "offset": 86
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 28,
+            "nano": 334000000
+          }
+        },
+        "transaction": {
+          "id": "3ad97fd9-839b-49c5-9d9c-5ad3879bd16b",
+          "amount": -2.4,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 11,
+              "day": 15
+            },
+            "time": {
+              "hour": 9,
+              "minute": 12,
+              "second": 3,
+              "nano": 374000000
+            }
+          },
+          "retailer": "TfL"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 87
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 28,
+            "nano": 334000000
+          }
+        },
+        "id": "3ad97fd9-839b-49c5-9d9c-5ad3879bd16b",
+        "type": "TransactionMarkedAsNotLunch"
+      },
+      "partition": 0,
+      "offset": 88
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 28,
+            "nano": 400000000
+          }
+        },
+        "transaction": {
+          "id": "8dc11b02-3b5c-42e6-b63d-b1355208b1b5",
+          "amount": -8,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 11,
+              "day": 15
+            },
+            "time": {
+              "hour": 12,
+              "minute": 29,
+              "second": 31,
+              "nano": 997000000
+            }
+          },
+          "retailer": "Da Ja Chicken"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 89
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 28,
+            "nano": 400000000
+          }
+        },
+        "id": "8dc11b02-3b5c-42e6-b63d-b1355208b1b5",
+        "type": "TransactionMarkedAsLunch"
+      },
+      "partition": 0,
+      "offset": 90
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 28,
+            "nano": 491000000
+          }
+        },
+        "transaction": {
+          "id": "a14989c2-e68a-4db0-96f7-ec2f0feffec8",
+          "amount": -2.4,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 11,
+              "day": 15
+            },
+            "time": {
+              "hour": 17,
+              "minute": 38,
+              "second": 47,
+              "nano": 592000000
+            }
+          },
+          "retailer": "TfL"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 91
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 28,
+            "nano": 491000000
+          }
+        },
+        "id": "a14989c2-e68a-4db0-96f7-ec2f0feffec8",
+        "type": "TransactionMarkedAsNotLunch"
+      },
+      "partition": 0,
+      "offset": 92
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 28,
+            "nano": 619000000
+          }
+        },
+        "transaction": {
+          "id": "ee67eff3-b3cd-4415-8b0b-d7122f276a9a",
+          "amount": -2.4,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 11,
+              "day": 16
+            },
+            "time": {
+              "hour": 12,
+              "minute": 59,
+              "second": 9,
+              "nano": 531000000
+            }
+          },
+          "retailer": "TfL"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 93
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 28,
+            "nano": 619000000
+          }
+        },
+        "id": "ee67eff3-b3cd-4415-8b0b-d7122f276a9a",
+        "type": "TransactionMarkedAsLunch"
+      },
+      "partition": 0,
+      "offset": 94
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 28,
+            "nano": 731000000
+          }
+        },
+        "transaction": {
+          "id": "d25e2b4a-aeca-4a06-ae0e-f8918f93167d",
+          "amount": -14.5,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 11,
+              "day": 18
+            },
+            "time": {
+              "hour": 16,
+              "minute": 56,
+              "second": 29,
+              "nano": 541000000
+            }
+          },
+          "retailer": "Trainline"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 95
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 28,
+            "nano": 731000000
+          }
+        },
+        "id": "d25e2b4a-aeca-4a06-ae0e-f8918f93167d",
+        "type": "TransactionMarkedAsNotLunch"
+      },
+      "partition": 0,
+      "offset": 96
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 28,
+            "nano": 839000000
+          }
+        },
+        "transaction": {
+          "id": "258801ef-1713-43cd-8534-6bea4d5f2810",
+          "amount": -3.2,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 11,
+              "day": 18
+            },
+            "time": {
+              "hour": 17,
+              "minute": 8,
+              "second": 55,
+              "nano": 0
+            }
+          },
+          "retailer": "Upper Crust"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 97
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 28,
+            "nano": 839000000
+          }
+        },
+        "id": "258801ef-1713-43cd-8534-6bea4d5f2810",
+        "type": "TransactionMarkedAsNotLunch"
+      },
+      "partition": 0,
+      "offset": 98
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 28,
+            "nano": 953000000
+          }
+        },
+        "transaction": {
+          "id": "b9fd081e-f466-4b3c-b42d-0d2f88c40739",
+          "amount": -18.47,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 11,
+              "day": 19
+            },
+            "time": {
+              "hour": 16,
+              "minute": 4,
+              "second": 59,
+              "nano": 735000000
+            }
+          },
+          "retailer": "Nisa Local"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 99
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 28,
+            "nano": 953000000
+          }
+        },
+        "id": "b9fd081e-f466-4b3c-b42d-0d2f88c40739",
+        "type": "TransactionMarkedAsNotLunch"
+      },
+      "partition": 0,
+      "offset": 100
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 29,
+            "nano": 38000000
+          }
+        },
+        "transaction": {
+          "id": "44fe71e1-fdeb-4543-b6c6-2832a91fa7b4",
+          "amount": -6.35,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 11,
+              "day": 19
+            },
+            "time": {
+              "hour": 17,
+              "minute": 33,
+              "second": 10,
+              "nano": 22000000
+            }
+          },
+          "retailer": "Starbucks"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 101
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 29,
+            "nano": 38000000
+          }
+        },
+        "id": "44fe71e1-fdeb-4543-b6c6-2832a91fa7b4",
+        "type": "TransactionMarkedAsNotLunch"
+      },
+      "partition": 0,
+      "offset": 102
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 29,
+            "nano": 146000000
+          }
+        },
+        "transaction": {
+          "id": "ae9c3a97-372a-4755-bb54-99d99b2919b9",
+          "amount": -6.05,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 11,
+              "day": 19
+            },
+            "time": {
+              "hour": 22,
+              "minute": 22,
+              "second": 14,
+              "nano": 181000000
+            }
+          },
+          "retailer": "Sainsbury's"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 103
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 29,
+            "nano": 146000000
+          }
+        },
+        "id": "ae9c3a97-372a-4755-bb54-99d99b2919b9",
+        "type": "TransactionMarkedAsNotLunch"
+      },
+      "partition": 0,
+      "offset": 104
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 29,
+            "nano": 234000000
+          }
+        },
+        "transaction": {
+          "id": "87eed0e2-e1ec-46b9-a678-05dc45b4695a",
+          "amount": -2.4,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 11,
+              "day": 20
+            },
+            "time": {
+              "hour": 15,
+              "minute": 53,
+              "second": 47,
+              "nano": 845000000
+            }
+          },
+          "retailer": "TfL"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 105
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 29,
+            "nano": 234000000
+          }
+        },
+        "id": "87eed0e2-e1ec-46b9-a678-05dc45b4695a",
+        "type": "TransactionMarkedAsNotLunch"
+      },
+      "partition": 0,
+      "offset": 106
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 29,
+            "nano": 324000000
+          }
+        },
+        "transaction": {
+          "id": "3f256502-1323-4d3f-825f-5fc4625a9262",
+          "amount": -7.9,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 11,
+              "day": 22
+            },
+            "time": {
+              "hour": 13,
+              "minute": 22,
+              "second": 41,
+              "nano": 973000000
+            }
+          },
+          "retailer": "EAT."
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 107
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 29,
+            "nano": 324000000
+          }
+        },
+        "id": "3f256502-1323-4d3f-825f-5fc4625a9262",
+        "type": "TransactionMarkedAsLunch"
+      },
+      "partition": 0,
+      "offset": 108
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 29,
+            "nano": 403000000
+          }
+        },
+        "transaction": {
+          "id": "e0c2e1fd-67f2-4d7a-9b8d-980bfe7fa605",
+          "amount": -8.3,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 11,
+              "day": 22
+            },
+            "time": {
+              "hour": 18,
+              "minute": 11,
+              "second": 12,
+              "nano": 569000000
+            }
+          },
+          "retailer": "Marks & Spencer"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 109
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 29,
+            "nano": 403000000
+          }
+        },
+        "id": "e0c2e1fd-67f2-4d7a-9b8d-980bfe7fa605",
+        "type": "TransactionMarkedAsNotLunch"
+      },
+      "partition": 0,
+      "offset": 110
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 29,
+            "nano": 496000000
+          }
+        },
+        "transaction": {
+          "id": "d099b92f-ca78-4af6-8e8b-cbb5798922f2",
+          "amount": -5.25,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 11,
+              "day": 23
+            },
+            "time": {
+              "hour": 13,
+              "minute": 34,
+              "second": 13,
+              "nano": 775000000
+            }
+          },
+          "retailer": "EAT."
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 111
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 29,
+            "nano": 496000000
+          }
+        },
+        "id": "d099b92f-ca78-4af6-8e8b-cbb5798922f2",
+        "type": "TransactionMarkedAsLunch"
+      },
+      "partition": 0,
+      "offset": 112
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 29,
+            "nano": 634000000
+          }
+        },
+        "transaction": {
+          "id": "e4f9f315-fa7a-4245-b207-88419ebd0b91",
+          "amount": -10.06,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 11,
+              "day": 23
+            },
+            "time": {
+              "hour": 18,
+              "minute": 17,
+              "second": 25,
+              "nano": 528000000
+            }
+          },
+          "retailer": "Tesco"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 113
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 29,
+            "nano": 634000000
+          }
+        },
+        "id": "e4f9f315-fa7a-4245-b207-88419ebd0b91",
+        "type": "TransactionMarkedAsNotLunch"
+      },
+      "partition": 0,
+      "offset": 114
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 29,
+            "nano": 770000000
+          }
+        },
+        "transaction": {
+          "id": "cd54ba6b-b521-4e8d-9732-f943d4fe2711",
+          "amount": 0,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 11,
+              "day": 23
+            },
+            "time": {
+              "hour": 23,
+              "minute": 52,
+              "second": 7,
+              "nano": 935000000
+            }
+          },
+          "retailer": "Yoyo Wallet"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 115
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 29,
+            "nano": 770000000
+          }
+        },
+        "id": "cd54ba6b-b521-4e8d-9732-f943d4fe2711",
+        "type": "TransactionMarkedAsNotLunch"
+      },
+      "partition": 0,
+      "offset": 116
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 29,
+            "nano": 866000000
+          }
+        },
+        "transaction": {
+          "id": "b23da0fc-2d8a-4b12-85c8-16563380c24a",
+          "amount": 0,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 11,
+              "day": 23
+            },
+            "time": {
+              "hour": 23,
+              "minute": 55,
+              "second": 19,
+              "nano": 975000000
+            }
+          },
+          "retailer": "Yoyo Wallet"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 117
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 29,
+            "nano": 866000000
+          }
+        },
+        "id": "b23da0fc-2d8a-4b12-85c8-16563380c24a",
+        "type": "TransactionMarkedAsNotLunch"
+      },
+      "partition": 0,
+      "offset": 118
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 29,
+            "nano": 971000000
+          }
+        },
+        "transaction": {
+          "id": "3ce2b8f6-2d1e-46c0-9d01-189bad6403de",
+          "amount": -8.35,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 11,
+              "day": 24
+            },
+            "time": {
+              "hour": 13,
+              "minute": 51,
+              "second": 41,
+              "nano": 685000000
+            }
+          },
+          "retailer": "VELO Restaurant"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 119
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 29,
+            "nano": 971000000
+          }
+        },
+        "id": "3ce2b8f6-2d1e-46c0-9d01-189bad6403de",
+        "type": "TransactionMarkedAsLunch"
+      },
+      "partition": 0,
+      "offset": 120
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 30,
+            "nano": 69000000
+          }
+        },
+        "transaction": {
+          "id": "6b224860-64eb-4c8a-ac07-e7918e51fb30",
+          "amount": -3.9,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 11,
+              "day": 28
+            },
+            "time": {
+              "hour": 12,
+              "minute": 38,
+              "second": 17,
+              "nano": 444000000
+            }
+          },
+          "retailer": "TfL"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 121
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 30,
+            "nano": 69000000
+          }
+        },
+        "id": "6b224860-64eb-4c8a-ac07-e7918e51fb30",
+        "type": "TransactionMarkedAsLunch"
+      },
+      "partition": 0,
+      "offset": 122
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 30,
+            "nano": 203000000
+          }
+        },
+        "transaction": {
+          "id": "7d6b4da7-43c8-4bd8-87c4-1c9404087cd0",
+          "amount": -12.6,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 11,
+              "day": 28
+            },
+            "time": {
+              "hour": 18,
+              "minute": 30,
+              "second": 22,
+              "nano": 805000000
+            }
+          },
+          "retailer": "The Dean Swift"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 123
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 30,
+            "nano": 203000000
+          }
+        },
+        "id": "7d6b4da7-43c8-4bd8-87c4-1c9404087cd0",
+        "type": "TransactionMarkedAsNotLunch"
+      },
+      "partition": 0,
+      "offset": 124
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 30,
+            "nano": 252000000
+          }
+        },
+        "transaction": {
+          "id": "ce12ba62-c3e6-4a08-b859-44f829633a31",
+          "amount": -3,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 11,
+              "day": 29
+            },
+            "time": {
+              "hour": 9,
+              "minute": 1,
+              "second": 9,
+              "nano": 177000000
+            }
+          },
+          "retailer": "TfL"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 125
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 30,
+            "nano": 252000000
+          }
+        },
+        "id": "ce12ba62-c3e6-4a08-b859-44f829633a31",
+        "type": "TransactionMarkedAsNotLunch"
+      },
+      "partition": 0,
+      "offset": 126
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 30,
+            "nano": 321000000
+          }
+        },
+        "transaction": {
+          "id": "dcc483b2-bcb9-4ab7-8168-007d1079b591",
+          "amount": -2.15,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 11,
+              "day": 29
+            },
+            "time": {
+              "hour": 12,
+              "minute": 0,
+              "second": 25,
+              "nano": 820000000
+            }
+          },
+          "retailer": "Sainsbury's"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 127
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 30,
+            "nano": 321000000
+          }
+        },
+        "id": "dcc483b2-bcb9-4ab7-8168-007d1079b591",
+        "type": "TransactionMarkedAsLunch"
+      },
+      "partition": 0,
+      "offset": 128
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 30,
+            "nano": 401000000
+          }
+        },
+        "transaction": {
+          "id": "b903bc87-1198-4335-8963-140564df4305",
+          "amount": -7.1,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 11,
+              "day": 29
+            },
+            "time": {
+              "hour": 12,
+              "minute": 17,
+              "second": 59,
+              "nano": 471000000
+            }
+          },
+          "retailer": "TfL"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 129
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 30,
+            "nano": 401000000
+          }
+        },
+        "id": "b903bc87-1198-4335-8963-140564df4305",
+        "type": "TransactionMarkedAsLunch"
+      },
+      "partition": 0,
+      "offset": 130
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 30,
+            "nano": 499000000
+          }
+        },
+        "transaction": {
+          "id": "61d27746-b51c-4299-a381-2afe5432ff50",
+          "amount": -8.65,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 11,
+              "day": 29
+            },
+            "time": {
+              "hour": 19,
+              "minute": 23,
+              "second": 44,
+              "nano": 117000000
+            }
+          },
+          "retailer": "Sainsbury's"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 131
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 30,
+            "nano": 499000000
+          }
+        },
+        "id": "61d27746-b51c-4299-a381-2afe5432ff50",
+        "type": "TransactionMarkedAsNotLunch"
+      },
+      "partition": 0,
+      "offset": 132
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 30,
+            "nano": 554000000
+          }
+        },
+        "transaction": {
+          "id": "6e9e5c34-422d-4f16-add5-e131d7041552",
+          "amount": -4.7,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 12,
+              "day": 4
+            },
+            "time": {
+              "hour": 13,
+              "minute": 3,
+              "second": 40,
+              "nano": 492000000
+            }
+          },
+          "retailer": "EAT."
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 133
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 30,
+            "nano": 554000000
+          }
+        },
+        "id": "6e9e5c34-422d-4f16-add5-e131d7041552",
+        "type": "TransactionMarkedAsLunch"
+      },
+      "partition": 0,
+      "offset": 134
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 30,
+            "nano": 621000000
+          }
+        },
+        "transaction": {
+          "id": "4735f070-8b55-4428-b68b-6d204ca65994",
+          "amount": -40,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 12,
+              "day": 4
+            },
+            "time": {
+              "hour": 13,
+              "minute": 30,
+              "second": 54,
+              "nano": 643000000
+            }
+          },
+          "retailer": "Cotswold Runners Need Guildford"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 135
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 30,
+            "nano": 621000000
+          }
+        },
+        "id": "4735f070-8b55-4428-b68b-6d204ca65994",
+        "type": "TransactionMarkedAsLunch"
+      },
+      "partition": 0,
+      "offset": 136
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 30,
+            "nano": 674000000
+          }
+        },
+        "transaction": {
+          "id": "742c774f-3f37-4654-a79e-167bb3c19cb4",
+          "amount": -11.4,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 12,
+              "day": 4
+            },
+            "time": {
+              "hour": 18,
+              "minute": 55,
+              "second": 12,
+              "nano": 774000000
+            }
+          },
+          "retailer": "Paperchase"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 137
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 30,
+            "nano": 674000000
+          }
+        },
+        "id": "742c774f-3f37-4654-a79e-167bb3c19cb4",
+        "type": "TransactionMarkedAsNotLunch"
+      },
+      "partition": 0,
+      "offset": 138
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 30,
+            "nano": 877000000
+          }
+        },
+        "transaction": {
+          "id": "be303797-109c-496c-b627-5cf7e2be7c3f",
+          "amount": -4,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 12,
+              "day": 5
+            },
+            "time": {
+              "hour": 12,
+              "minute": 38,
+              "second": 55,
+              "nano": 339000000
+            }
+          },
+          "retailer": "Eatalia"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 139
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 30,
+            "nano": 877000000
+          }
+        },
+        "id": "be303797-109c-496c-b627-5cf7e2be7c3f",
+        "type": "TransactionMarkedAsLunch"
+      },
+      "partition": 0,
+      "offset": 140
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 31,
+            "nano": 7000000
+          }
+        },
+        "transaction": {
+          "id": "887bfebc-0dc2-432f-8299-7f852e1ea24d",
+          "amount": -8.25,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 12,
+              "day": 6
+            },
+            "time": {
+              "hour": 14,
+              "minute": 7,
+              "second": 0,
+              "nano": 256000000
+            }
+          },
+          "retailer": "Chilango"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 141
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 31,
+            "nano": 7000000
+          }
+        },
+        "id": "887bfebc-0dc2-432f-8299-7f852e1ea24d",
+        "type": "TransactionMarkedAsNotLunch"
+      },
+      "partition": 0,
+      "offset": 142
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 31,
+            "nano": 147000000
+          }
+        },
+        "transaction": {
+          "id": "a75657cc-3ebc-439a-9405-1c40da4a1b78",
+          "amount": -20.5,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 12,
+              "day": 6
+            },
+            "time": {
+              "hour": 18,
+              "minute": 14,
+              "second": 41,
+              "nano": 462000000
+            }
+          },
+          "retailer": "Wheatsheaf"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 143
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 31,
+            "nano": 147000000
+          }
+        },
+        "id": "a75657cc-3ebc-439a-9405-1c40da4a1b78",
+        "type": "TransactionMarkedAsNotLunch"
+      },
+      "partition": 0,
+      "offset": 144
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 31,
+            "nano": 297000000
+          }
+        },
+        "transaction": {
+          "id": "1a43b242-6609-415a-8931-cbc51339db09",
+          "amount": -6.29,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 12,
+              "day": 7
+            },
+            "time": {
+              "hour": 0,
+              "minute": 8,
+              "second": 9,
+              "nano": 82000000
+            }
+          },
+          "retailer": "Chicken Cottage"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 145
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 31,
+            "nano": 297000000
+          }
+        },
+        "id": "1a43b242-6609-415a-8931-cbc51339db09",
+        "type": "TransactionMarkedAsNotLunch"
+      },
+      "partition": 0,
+      "offset": 146
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 31,
+            "nano": 391000000
+          }
+        },
+        "transaction": {
+          "id": "cc7d230c-d492-4c21-834d-45c1aec07d93",
+          "amount": -2.99,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 12,
+              "day": 7
+            },
+            "time": {
+              "hour": 8,
+              "minute": 36,
+              "second": 11,
+              "nano": 242000000
+            }
+          },
+          "retailer": "EAT."
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 147
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 31,
+            "nano": 391000000
+          }
+        },
+        "id": "cc7d230c-d492-4c21-834d-45c1aec07d93",
+        "type": "TransactionMarkedAsNotLunch"
+      },
+      "partition": 0,
+      "offset": 148
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 31,
+            "nano": 499000000
+          }
+        },
+        "transaction": {
+          "id": "84b3df26-07ca-4348-a00a-5f41b24feb37",
+          "amount": -0.82,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 12,
+              "day": 7
+            },
+            "time": {
+              "hour": 9,
+              "minute": 54,
+              "second": 21,
+              "nano": 866000000
+            }
+          },
+          "retailer": "Nu Vending"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 149
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 31,
+            "nano": 499000000
+          }
+        },
+        "id": "84b3df26-07ca-4348-a00a-5f41b24feb37",
+        "type": "TransactionMarkedAsNotLunch"
+      },
+      "partition": 0,
+      "offset": 150
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 31,
+            "nano": 576000000
+          }
+        },
+        "transaction": {
+          "id": "73453d2f-b9a7-43e5-8f2e-b6c746f9286c",
+          "amount": -3.99,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 12,
+              "day": 7
+            },
+            "time": {
+              "hour": 13,
+              "minute": 14,
+              "second": 35,
+              "nano": 657000000
+            }
+          },
+          "retailer": "Pret A Manger"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 151
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 31,
+            "nano": 576000000
+          }
+        },
+        "id": "73453d2f-b9a7-43e5-8f2e-b6c746f9286c",
+        "type": "TransactionMarkedAsLunch"
+      },
+      "partition": 0,
+      "offset": 152
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 31,
+            "nano": 696000000
+          }
+        },
+        "transaction": {
+          "id": "f2985f78-3cd4-4734-9cc3-c817c9a339dd",
+          "amount": -6,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 12,
+              "day": 7
+            },
+            "time": {
+              "hour": 18,
+              "minute": 11,
+              "second": 11,
+              "nano": 414000000
+            }
+          },
+          "retailer": "Marks & Spencer"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 153
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 31,
+            "nano": 696000000
+          }
+        },
+        "id": "f2985f78-3cd4-4734-9cc3-c817c9a339dd",
+        "type": "TransactionMarkedAsNotLunch"
+      },
+      "partition": 0,
+      "offset": 154
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 31,
+            "nano": 772000000
+          }
+        },
+        "transaction": {
+          "id": "64345fc2-c080-466e-9801-7ea54171d4a5",
+          "amount": -13.46,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 12,
+              "day": 7
+            },
+            "time": {
+              "hour": 19,
+              "minute": 28,
+              "second": 33,
+              "nano": 210000000
+            }
+          },
+          "retailer": "Fine Life Shopper"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 155
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 31,
+            "nano": 772000000
+          }
+        },
+        "id": "64345fc2-c080-466e-9801-7ea54171d4a5",
+        "type": "TransactionMarkedAsNotLunch"
+      },
+      "partition": 0,
+      "offset": 156
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 31,
+            "nano": 864000000
+          }
+        },
+        "transaction": {
+          "id": "9ce5fb43-1841-4a3b-9577-dd43bb60b696",
+          "amount": -15,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 12,
+              "day": 8
+            },
+            "time": {
+              "hour": 13,
+              "minute": 16,
+              "second": 59,
+              "nano": 860000000
+            }
+          },
+          "retailer": "Cafe Brood"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 157
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 31,
+            "nano": 864000000
+          }
+        },
+        "id": "9ce5fb43-1841-4a3b-9577-dd43bb60b696",
+        "type": "TransactionMarkedAsLunch"
+      },
+      "partition": 0,
+      "offset": 158
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 31,
+            "nano": 933000000
+          }
+        },
+        "transaction": {
+          "id": "656dcacf-113b-46db-9e1f-a79b930ad03c",
+          "amount": -16.4,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 12,
+              "day": 8
+            },
+            "time": {
+              "hour": 17,
+              "minute": 20,
+              "second": 54,
+              "nano": 631000000
+            }
+          },
+          "retailer": "The Horniman at Hays"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 159
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 31,
+            "nano": 933000000
+          }
+        },
+        "id": "656dcacf-113b-46db-9e1f-a79b930ad03c",
+        "type": "TransactionMarkedAsNotLunch"
+      },
+      "partition": 0,
+      "offset": 160
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 32,
+            "nano": 34000000
+          }
+        },
+        "transaction": {
+          "id": "2db00728-a7b4-42f2-8566-de9b83f98f14",
+          "amount": 0,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 12,
+              "day": 9
+            },
+            "time": {
+              "hour": 1,
+              "minute": 34,
+              "second": 23,
+              "nano": 784000000
+            }
+          },
+          "retailer": "Uber"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 161
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 32,
+            "nano": 34000000
+          }
+        },
+        "id": "2db00728-a7b4-42f2-8566-de9b83f98f14",
+        "type": "TransactionMarkedAsNotLunch"
+      },
+      "partition": 0,
+      "offset": 162
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 32,
+            "nano": 118000000
+          }
+        },
+        "transaction": {
+          "id": "947eafdf-c217-45fd-823f-8530b10cb208",
+          "amount": -11.48,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 12,
+              "day": 9
+            },
+            "time": {
+              "hour": 1,
+              "minute": 35,
+              "second": 1,
+              "nano": 453000000
+            }
+          },
+          "retailer": "Uber"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 163
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 32,
+            "nano": 118000000
+          }
+        },
+        "id": "947eafdf-c217-45fd-823f-8530b10cb208",
+        "type": "TransactionMarkedAsNotLunch"
+      },
+      "partition": 0,
+      "offset": 164
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 32,
+            "nano": 204000000
+          }
+        },
+        "transaction": {
+          "id": "5fc6939a-2b66-4f3b-b4fd-23ae0e83fcd9",
+          "amount": -60,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 12,
+              "day": 9
+            },
+            "time": {
+              "hour": 13,
+              "minute": 31,
+              "second": 33,
+              "nano": 612000000
+            }
+          },
+          "retailer": "Cash Machine"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 165
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 32,
+            "nano": 204000000
+          }
+        },
+        "id": "5fc6939a-2b66-4f3b-b4fd-23ae0e83fcd9",
+        "type": "TransactionMarkedAsNotLunch"
+      },
+      "partition": 0,
+      "offset": 166
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 32,
+            "nano": 348000000
+          }
+        },
+        "transaction": {
+          "id": "f45f9f8a-fb2a-4803-aa5a-45aca94635f4",
+          "amount": -20.63,
+          "created": {
+            "date": {
+              "year": 2017,
+              "month": 12,
+              "day": 9
+            },
+            "time": {
+              "hour": 13,
+              "minute": 46,
+              "second": 36,
+              "nano": 770000000
+            }
+          },
+          "retailer": "Marks & Spencer"
+        },
+        "type": "CardTransactionAdded"
+      },
+      "partition": 0,
+      "offset": 167
+    },
+    {
+      "topic": "events",
+      "key": 1234,
+      "value": {
+        "userId": "1234",
+        "timestamp": {
+          "date": {
+            "year": 2018,
+            "month": 9,
+            "day": 16
+          },
+          "time": {
+            "hour": 15,
+            "minute": 58,
+            "second": 32,
+            "nano": 348000000
+          }
+        },
+        "id": "f45f9f8a-fb2a-4803-aa5a-45aca94635f4",
+        "type": "TransactionMarkedAsNotLunch"
+      },
+      "partition": 0,
+      "offset": 168
+    }
+  ]

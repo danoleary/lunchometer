@@ -14,6 +14,7 @@ import org.apache.kafka.streams.test.ConsumerRecordFactory
 import org.apache.kafka.streams.TopologyTestDriver
 import org.apache.kafka.streams.test.OutputVerifier
 import org.junit.After
+import java.time.LocalDateTime
 import java.util.*
 import kotlin.test.assertEquals
 import kotlin.test.assertNull
@@ -25,6 +26,8 @@ class TopologyTests {
 
     private val stringDeserializer = StringDeserializer()
     private val recordFactory = ConsumerRecordFactory<String, String>(StringSerializer(), StringSerializer())
+
+    private val timestamp = LocalDateTime.now()
 
     @Before
     fun setup() {
@@ -48,7 +51,7 @@ class TopologyTests {
         val key = "dan"
         publishRetrieveCardTransactions(key)
 
-        val expectedNewEvent = Event.CardTransactionRetrievalRequested(key)
+        val expectedNewEvent = Event.CardTransactionRetrievalRequested(key, timestamp)
 
         OutputVerifier
             .compareKeyValue((testDriver as TopologyTestDriver)
@@ -83,9 +86,9 @@ class TopologyTests {
         val addTransactionCommand = Command.AddCardTransaction(key, lunchTransaction)
         publishCommand(key, addTransactionCommand)
 
-        val expectedEvent1 = Event.CardTransactionRetrievalRequested(key)
-        val expectedEvent2 = Event.CardTransactionAdded(key, lunchTransaction)
-        val expectedEvent3 = Event.TransactionMarkedAsLunch(key, lunchTransaction.id)
+        val expectedEvent1 = Event.CardTransactionRetrievalRequested(key, timestamp)
+        val expectedEvent2 = Event.CardTransactionAdded(key, timestamp, lunchTransaction)
+        val expectedEvent3 = Event.TransactionMarkedAsLunch(key, timestamp, lunchTransaction.id)
 
         OutputVerifier
             .compareKeyValue((testDriver as TopologyTestDriver)
@@ -110,9 +113,9 @@ class TopologyTests {
         val storedEvents = deserializeEventList(store!!.get(key))
 
         val expectedEvents = listOf(
-            Event.CardTransactionRetrievalRequested(key),
-            Event.CardTransactionAdded(key, lunchTransaction),
-            Event.TransactionMarkedAsLunch(key, lunchTransaction.id)
+            Event.CardTransactionRetrievalRequested(key, timestamp),
+            Event.CardTransactionAdded(key, timestamp, lunchTransaction),
+            Event.TransactionMarkedAsLunch(key, timestamp, lunchTransaction.id)
         )
 
         assertEquals(expectedEvents, storedEvents)

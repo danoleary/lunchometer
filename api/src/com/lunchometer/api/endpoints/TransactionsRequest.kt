@@ -20,7 +20,7 @@ suspend fun transactionsRequest(streams: KafkaStreams, call: ApplicationCall) {
     val userId = call.parameters["userId"]
     if(userId == null) {
         call.respond(HttpStatusCode.BadRequest)
-        return@transactionsRequest
+        return
     }
 
     val command = Command.RetrieveCardTransactions(userId)

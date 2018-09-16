@@ -42,9 +42,28 @@ dependencies {
 
     testCompile "io.ktor:ktor-server-test-host:$ktor_version"
     testCompile group: 'org.apache.kafka', name: 'kafka-streams-test-utils', version: '2.0.0'
+
+    testCompile('org.junit.jupiter:junit-jupiter-api:5.3.1')
+    testCompile('org.junit.jupiter:junit-jupiter-params:5.3.1')
+    testRuntime('org.junit.jupiter:junit-jupiter-engine:5.3.1')
+}
+
+test {
+    useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
 }
 
 kotlin.experimental.coroutines = 'enable'
+
+compileKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+compileTestKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+
 
 shadowJar {
     baseName = 'lunchometer'

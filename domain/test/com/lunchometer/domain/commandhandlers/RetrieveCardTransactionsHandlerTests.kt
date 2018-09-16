@@ -4,8 +4,11 @@ import com.lunchometer.domain.lunchTransaction
 import com.lunchometer.shared.Command
 import com.lunchometer.shared.Event
 import org.junit.Test
+import java.time.LocalDateTime
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue
+
+private val timestamp = LocalDateTime.now()
 
 class RetrieveCardTransactionsHandlerTests {
 
@@ -16,7 +19,7 @@ class RetrieveCardTransactionsHandlerTests {
         val result = handle(listOf(), retrieveCardTransactions)
 
         assertTrue(result.success)
-        assertTrue(result.events.contains(Event.CardTransactionRetrievalRequested("some id")))
+        assertTrue(result.events.contains(Event.CardTransactionRetrievalRequested("some id", timestamp)))
         assertTrue(result.events.size == 1)
     }
 
@@ -25,7 +28,7 @@ class RetrieveCardTransactionsHandlerTests {
         val addCardTransaction = Command.AddCardTransaction("userId", lunchTransaction)
 
         val result =
-            handle(listOf(Event.CardTransactionAdded("userId", lunchTransaction)), addCardTransaction)
+            handle(listOf(Event.CardTransactionAdded("userId", timestamp, lunchTransaction)), addCardTransaction)
 
         assertFalse(result.success)
         assertTrue(result.events.isEmpty())

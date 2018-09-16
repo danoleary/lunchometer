@@ -7,10 +7,12 @@ import com.lunchometer.domain.weekendLunchtime
 import com.lunchometer.shared.Command
 import com.lunchometer.shared.Event
 import org.junit.Test
+import java.time.LocalDateTime
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue
 
 private const val userId = "aUserId"
+private val timestamp = LocalDateTime.now()
 
 class AddCardTransactionHandlerTests {
 
@@ -32,8 +34,8 @@ class AddCardTransactionHandlerTests {
         val result = handle(cardTransactionsRequested, addCardTransaction)
 
         assertTrue(result.success)
-        assertTrue(result.events.contains(Event.CardTransactionAdded(userId, lunchTransaction)))
-        assertTrue(result.events.contains(Event.TransactionMarkedAsLunch(userId, lunchTransaction.id)))
+        assertTrue(result.events.contains(Event.CardTransactionAdded(userId, timestamp, lunchTransaction)))
+        assertTrue(result.events.contains(Event.TransactionMarkedAsLunch(userId, timestamp, lunchTransaction.id)))
         assertTrue(result.events.size == 2)
     }
 
@@ -48,8 +50,8 @@ class AddCardTransactionHandlerTests {
         val result = handle(cardTransactionsRequested, addCardTransaction)
 
         assertTrue(result.success)
-        assertTrue(result.events.contains(Event.CardTransactionAdded(userId, transaction)))
-        assertTrue(result.events.contains(Event.TransactionMarkedAsNotLunch(userId, transaction.id)))
+        assertTrue(result.events.contains(Event.CardTransactionAdded(userId, timestamp, transaction)))
+        assertTrue(result.events.contains(Event.TransactionMarkedAsNotLunch(userId, timestamp, transaction.id)))
         assertTrue(result.events.size == 2)
     }
 
@@ -64,8 +66,8 @@ class AddCardTransactionHandlerTests {
         val result = handle(cardTransactionsRequested, addCardTransaction)
 
         assertTrue(result.success)
-        assertTrue(result.events.contains(Event.CardTransactionAdded(userId, transaction)))
-        assertTrue(result.events.contains(Event.TransactionMarkedAsNotLunch(userId, transaction.id)))
+        assertTrue(result.events.contains(Event.CardTransactionAdded(userId, timestamp, transaction)))
+        assertTrue(result.events.contains(Event.TransactionMarkedAsNotLunch(userId, timestamp, transaction.id)))
         assertTrue(result.events.size == 2)
     }
 
@@ -80,11 +82,11 @@ class AddCardTransactionHandlerTests {
         val result = handle(cardTransactionsRequested, addCardTransaction)
 
         assertTrue(result.success)
-        assertTrue(result.events.contains(Event.CardTransactionAdded(userId, transaction)))
-        assertTrue(result.events.contains(Event.TransactionMarkedAsNotLunch(userId, transaction.id)))
+        assertTrue(result.events.contains(Event.CardTransactionAdded(userId, timestamp, transaction)))
+        assertTrue(result.events.contains(Event.TransactionMarkedAsNotLunch(userId, timestamp, transaction.id)))
         assertTrue(result.events.size == 2)
     }
 
     private val cardTransactionsRequested =
-        listOf(Event.CardTransactionRetrievalRequested(userId))
+        listOf(Event.CardTransactionRetrievalRequested(userId, timestamp))
 }

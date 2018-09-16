@@ -6,6 +6,7 @@ import com.lunchometer.shared.Event
 import com.lunchometer.shared.InternalCommandResponse
 import org.apache.kafka.streams.processor.MockProcessorContext
 import org.junit.Test
+import java.time.LocalDateTime
 import java.util.*
 import kotlin.test.assertEquals
 import kotlin.test.assertFalse
@@ -22,7 +23,7 @@ class CommandResponsePublishingProcessorTests {
         processorUnderTest.init(context)
 
         val internalCommandResponse =
-            InternalCommandResponse(UUID.randomUUID(), true, listOf(Event.CardTransactionRetrievalRequested(key)))
+            InternalCommandResponse(UUID.randomUUID(), true, listOf(Event.CardTransactionRetrievalRequested(key, LocalDateTime.now())))
 
         processorUnderTest.process(key, Gson().toJson(internalCommandResponse))
 

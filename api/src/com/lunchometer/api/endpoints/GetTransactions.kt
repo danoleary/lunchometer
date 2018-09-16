@@ -1,6 +1,8 @@
 package com.lunchometer.api.endpoints
 
 import com.lunchometer.api.*
+import com.lunchometer.api.readmodels.TransactionWeekDto
+import com.lunchometer.api.readmodels.groupByWeek
 import com.lunchometer.api.utils.retryIO
 import com.lunchometer.shared.deserializeEventList
 import io.ktor.application.ApplicationCall
@@ -17,7 +19,7 @@ suspend fun getTransactions(streams: KafkaStreams, call: ApplicationCall) {
     if(userId == null) {
         logger.info { "No user id, returning bad request" }
         call.respond(HttpStatusCode.BadRequest)
-        return@getTransactions
+        return
     }
 
     logger.info { "Retrieving transactions for $userId" }
@@ -37,5 +39,6 @@ private fun getTransactionsByWeek(streams: KafkaStreams, key: String): List<Tran
         return listOf()
     }
     val events = deserializeEventList(json)
+
     return groupByWeek(events)
 }

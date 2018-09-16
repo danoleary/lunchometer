@@ -9,6 +9,7 @@ import org.apache.kafka.common.serialization.Serdes
 import org.apache.kafka.streams.processor.MockProcessorContext
 import org.apache.kafka.streams.state.Stores
 import org.junit.Test
+import java.time.LocalDateTime
 import kotlin.test.assertEquals
 import kotlin.test.assertFalse
 
@@ -36,7 +37,7 @@ class CommandHandlerProcessorTests {
 
         processorUnderTest.process(key, Gson().toJson(command))
 
-        val expectedEvents = listOf(Event.CardTransactionRetrievalRequested(key))
+        val expectedEvents = listOf(Event.CardTransactionRetrievalRequested(key, LocalDateTime.now()))
 
         val forwarded = context.forwarded().iterator()
         val forwardedMessage = forwarded.next().keyValue()
