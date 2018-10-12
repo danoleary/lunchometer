@@ -1,0 +1,15 @@
+{
+    "name": "MarkTransactionAsLunch",
+    "namespace": "com.lunchometer.avro",
+    "type": "record",
+    "fields": [
+        {
+            "name": "header",
+            "type": "CommandHeader"
+        },
+        {
+          "name": "transactionId",
+          "type": "string"
+        }
+    ]
+}

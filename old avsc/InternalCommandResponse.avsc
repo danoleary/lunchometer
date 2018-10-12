@@ -1,0 +1,22 @@
+{
+    "name": "InternalCommandResponse",
+    "namespace": "com.lunchometer.avro",
+    "type": "record",
+    "fields": [
+        {
+          "name": "commandId",
+          "type": "string"
+        },
+        {
+          "name": "success",
+          "type": "boolean"
+        },
+        {
+          "name": "events",
+          "type": {
+            "type": "array",
+            "items": ["RetrieveCardTransactions", "AddCardTransaction", "MarkTransactionAsLunch", "MarkTransactionAsNotLunch"]
+          }
+        }
+    ]
+}

@@ -1,0 +1,25 @@
+{
+    "name": "DomainAggregate",
+    "namespace": "com.lunchometer.avro",
+    "type": "record",
+    "fields": [
+        {
+          "name": "allEvents",
+          "type": {
+            "type": "array",
+            "items": ["CardTransactionRetrievalRequested", "CardTransactionAdded", "TransactionMarkedAsLunch", "TransactionMarkedAsNotLunch"]
+          }
+        },
+        {
+          "name": "newEvents",
+          "type": {
+            "type": "array",
+            "items": ["CardTransactionRetrievalRequested", "CardTransactionAdded", "TransactionMarkedAsLunch", "TransactionMarkedAsNotLunch"]
+          }
+        },
+        {
+          "name": "lastCommandResponse",
+          "type": "CommandResponse"
+        }
+    ]
+}

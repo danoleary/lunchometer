@@ -16,36 +16,36 @@ fun buildTopology(): Topology {
 
     val builder = StreamsBuilder()
 
-    builder
-        .stream<String, String>(CommandResponsesTopic)
-        .groupByKey()
-        .aggregate(
-            { "[]" },
-            { _, v, agg -> reduceCommands(v, agg) },
-            Materialized.`as`<String, String, KeyValueStore<Bytes, ByteArray>>(CommandResponseStore))
-
-    builder
-        .stream<String, String>(EventTopic)
-        .groupByKey()
-        .aggregate(
-            { "[]" },
-            { _, v, agg -> reduceEvents(v, agg) },
-            Materialized.`as`<String, String, KeyValueStore<Bytes, ByteArray>>(ApiEventStore))
+//    builder
+//        .stream<String, String>(CommandResponsesTopic)
+//        .groupByKey()
+//        .aggregate(
+//            { "[]" },
+//            { _, v, agg -> reduceCommands(v, agg) },
+//            Materialized.`as`<String, String, KeyValueStore<Bytes, ByteArray>>(CommandResponseStore))
+//
+//    builder
+//        .stream<String, String>(EventTopic)
+//        .groupByKey()
+//        .aggregate(
+//            { "[]" },
+//            { _, v, agg -> reduceEvents(v, agg) },
+//            Materialized.`as`<String, String, KeyValueStore<Bytes, ByteArray>>(ApiEventStore))
 
     return builder.build()
 }
 
-private fun reduceCommands(commandResponse: String, existing: String): String {
-    val existingCommandResponses = deserializeCommandResponseList(existing)
-    val new = deserializeCommandResponse(commandResponse)
-    return Gson().toJson(existingCommandResponses.plus(new))
-}
-
-private fun reduceEvents(event: String, existing: String): String {
-    val existingEvents = deserializeEventList(existing)
-    val new = deserializeEvent(event)
-    return Gson().toJson(existingEvents.plus(new))
-}
+//private fun reduceCommands(commandResponse: String, existing: String): String {
+//    val existingCommandResponses = deserializeCommandResponseList(existing)
+//    val new = deserializeCommandResponse(commandResponse)
+//    return Gson().toJson(existingCommandResponses.plus(new))
+//}
+//
+//private fun reduceEvents(event: String, existing: String): String {
+//    val existingEvents = deserializeEventList(existing)
+//    val new = deserializeEvent(event)
+//    return Gson().toJson(existingEvents.plus(new))
+//}
 
 
 

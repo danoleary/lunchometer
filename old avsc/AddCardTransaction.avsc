@@ -1,0 +1,15 @@
+{
+    "name": "AddCardTransaction",
+    "namespace": "com.lunchometer.avro",
+    "type": "record",
+    "fields": [
+        {
+            "name": "header",
+            "type": "CommandHeader"
+        },
+        {
+          "name": "transaction",
+          "type": "Transaction"
+        }
+    ]
+}

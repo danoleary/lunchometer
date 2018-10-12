@@ -1,0 +1,20 @@
+{
+    "name": "EventHeader",
+    "namespace": "com.lunchometer.avro",
+    "type": "record",
+    "fields": [
+        {
+          "name": "id",
+          "type": "string"
+        },
+        {
+          "name": "userId",
+          "type": "string"
+        },
+        {
+          "name": "timestamp",
+          "type": "long",
+          "logical-type": "timestamp-millis"
+        }
+    ]
+}

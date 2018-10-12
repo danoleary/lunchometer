@@ -24,11 +24,13 @@ sourceSets {
 repositories {
     jcenter()
     maven { url "https://kotlin.bintray.com/ktor" }
+    maven { url "https://packages.confluent.io/maven/" }
     mavenCentral()
 }
 
 dependencies {
     compile project(':shared')
+    compile project(':avro')
 
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
     compile "io.ktor:ktor-server-netty:$ktor_version"
@@ -38,14 +40,18 @@ dependencies {
     compile "io.ktor:ktor-locations:$ktor_version"
     compile "ch.qos.logback:logback-classic:$logback_version"
     compile 'io.github.microutils:kotlin-logging:1.5.4'
-    compile group: 'org.apache.kafka', name: 'kafka-streams', version: '1.1.0'
+    compile "org.apache.kafka:kafka-streams:$kafka_version"
+    compile "io.confluent:kafka-schema-registry:$confluent_version"
+    compile "io.confluent:kafka-avro-serializer:$confluent_version"
+    compile "io.confluent:kafka-streams-avro-serde:$confluent_version"
 
     testCompile "io.ktor:ktor-server-test-host:$ktor_version"
-    testCompile group: 'org.apache.kafka', name: 'kafka-streams-test-utils', version: '2.0.0'
+    testCompile "org.apache.kafka:kafka-streams-test-utils:$kafka_version"
 
-    testCompile('org.junit.jupiter:junit-jupiter-api:5.3.1')
-    testCompile('org.junit.jupiter:junit-jupiter-params:5.3.1')
-    testRuntime('org.junit.jupiter:junit-jupiter-engine:5.3.1')
+
+    testCompile("org.junit.jupiter:junit-jupiter-api:$jupiter_version")
+    testCompile("org.junit.jupiter:junit-jupiter-params:$jupiter_version")
+    testRuntime("org.junit.jupiter:junit-jupiter-engine:$jupiter_version")
 }
 
 test {

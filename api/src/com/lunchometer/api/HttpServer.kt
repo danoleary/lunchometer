@@ -2,17 +2,22 @@ package com.lunchometer.api
 
 import com.auth0.jwk.JwkProvider
 import com.auth0.jwk.JwkProviderBuilder
-import com.lunchometer.api.endpoints.getTransactions
 import com.lunchometer.api.endpoints.transactionsRequest
 import com.typesafe.config.ConfigFactory
-import io.ktor.application.*
+import io.ktor.application.install
+import io.ktor.application.call
 import io.ktor.auth.Authentication
 import io.ktor.auth.jwt.JWTPrincipal
 import io.ktor.auth.jwt.jwt
 import io.ktor.config.HoconApplicationConfig
-import io.ktor.features.*
-import io.ktor.routing.*
-import io.ktor.gson.*
+import io.ktor.features.DefaultHeaders
+import io.ktor.features.Compression
+import io.ktor.features.CORS
+import io.ktor.features.CallLogging
+import io.ktor.features.ContentNegotiation
+import io.ktor.routing.routing
+import io.ktor.routing.post
+import io.ktor.gson.gson
 import io.ktor.http.HttpHeaders
 import io.ktor.server.engine.embeddedServer
 import io.ktor.server.netty.Netty
@@ -60,9 +65,9 @@ fun startServer(streams: KafkaStreams) {
         }
         routing {
             //authenticate {
-                get("/transactions/{userId}") {
-                    getTransactions(streams, call)
-                }
+//                get("/transactions/{userId}") {
+//                    getTransactions(streams, call)
+//                }
                 post("/transactions/fetch/{userId}") {
                     transactionsRequest(streams, call)
                 }

@@ -1,39 +1,35 @@
 package com.lunchometer.starlingintegration
 
-import com.google.gson.Gson
-import com.lunchometer.shared.*
+import com.lunchometer.avro.CardTransactionRetrievalRequested
+import com.lunchometer.avro.Transaction
+import com.lunchometer.avro.AddCardTransaction
+import com.lunchometer.avro.CommandHeader
+import com.lunchometer.shared.EventTopic
+import com.lunchometer.shared.CommandsTopic
+import com.lunchometer.shared.getKafkaConfig
 import com.typesafe.config.ConfigFactory
-import org.apache.kafka.common.serialization.Serdes
 import org.apache.kafka.streams.KafkaStreams
 import org.apache.kafka.streams.StreamsBuilder
-import org.apache.kafka.streams.StreamsConfig
-import org.json.JSONObject
 import java.util.*
-
-private const val bootstrapServers = "kafka1:9092"
-private val streamsConfiguration = Properties()
+import org.apache.avro.specific.SpecificRecord
+import java.lang.Exception
+import java.time.LocalDateTime
+import java.time.ZoneOffset
 
 fun main(args: Array<String>) {
 
     val config = ConfigFactory.load()
     val starlingToken = config.getString("starling.token")
 
-    streamsConfiguration.put(StreamsConfig.APPLICATION_ID_CONFIG, "starling-integration")
-    streamsConfiguration.put(StreamsConfig.CLIENT_ID_CONFIG, "starling-integration")
-    streamsConfiguration.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers)
-    streamsConfiguration.put(StreamsConfig.DEFAULT_KEY_SERDE_CLASS_CONFIG, Serdes.String()::class.java.name)
-    streamsConfiguration.put(StreamsConfig.DEFAULT_VALUE_SERDE_CLASS_CONFIG, Serdes.String()::class.java.name)
-    streamsConfiguration.put(StreamsConfig.COMMIT_INTERVAL_MS_CONFIG, 10 * 1000)
-    streamsConfiguration.put(StreamsConfig.CACHE_MAX_BYTES_BUFFERING_CONFIG, 0)
+    val streamsConfiguration = getKafkaConfig("starling-integration")
 
     val builder = StreamsBuilder()
 
         builder
-        .stream<String, String>(EventTopic)
+        .stream<String, SpecificRecord>(EventTopic)
         .filter{ _, v -> filterEvents(v) }
-        .mapValues { _, v -> mapEvent(v) }
-        .flatMapValues { _, v -> fetchTransactions(v as Event.CardTransactionRetrievalRequested, starlingToken) }
-        .mapValues { _, v -> Gson().toJson(v) }
+        .mapValues { _, v -> mapToEvent(v) }
+        .flatMapValues { _, v -> fetchTransactions(v, starlingToken) }
         .to(CommandsTopic)
 
     val streams = KafkaStreams(builder.build(), streamsConfiguration)
@@ -45,18 +41,52 @@ fun main(args: Array<String>) {
     Runtime.getRuntime().addShutdownHook(Thread(streams::close))
 }
 
-private fun filterEvents(json: String) =
-    JSONObject(json).getString("type") == Event.CardTransactionRetrievalRequested::class.java.simpleName
+private fun filterEvents(record: SpecificRecord): Boolean =
+    record.schema.name == CardTransactionRetrievalRequested::class.java.simpleName
 
-private fun mapEvent(json: String) =
-    Gson().fromJson(json, Event.CardTransactionRetrievalRequested::class.java)
+private fun mapToEvent(record: SpecificRecord): CardTransactionRetrievalRequested =
+    record as CardTransactionRetrievalRequested
 
-private fun fetchTransactions(event: Event.CardTransactionRetrievalRequested, starlingToken: String) =
-    getAllTransactions(starlingToken).map { Command.AddCardTransaction(
-        userId = event.userId,
-        transaction = Transaction(
-            id = it.id,
-            amount = it.amount,
-            created = it.created,
-            retailer = it.narrative
-        )) }
+private fun fetchTransactions(request: CardTransactionRetrievalRequested, starlingToken: String)
+    : List<AddCardTransaction> {
+    val transactions = getAllTransactions(starlingToken)
+    val events = mutableListOf<AddCardTransaction>()
+    for (it in transactions) {
+        try{
+            it.created.toInstant(ZoneOffset.UTC).toEpochMilli()
+        } catch(e: Exception) {
+            println("I'm here")
+        }
+        try {
+            val event = AddCardTransaction(
+                CommandHeader(
+                    UUID.randomUUID().toString(),
+                    request.header.userId,
+                    LocalDateTime.now().toInstant(ZoneOffset.UTC).toEpochMilli()),
+                Transaction(
+                    it.id.toString(),
+                    it.amount,
+                    0L,
+                    it.narrative)
+            )
+            events.add(event)
+        } catch (e: Exception) {
+            println(e.message)
+        }
+    }
+    return events
+}
+//    return transactions
+//        .map { AddCardTransaction(
+//            CommandHeader(
+//                UUID.randomUUID().toString(),
+//                event.header.userId,
+//                "AddCardTransaction",
+//                LocalDateTime.now().toInstant(ZoneOffset.UTC).toEpochMilli()),
+//            Transaction(
+//                it.id.toString(),
+//                it.amount,
+//                it.created.toInstant(ZoneOffset.UTC).toEpochMilli(),
+//                it.narrative)
+//        )
+//        }

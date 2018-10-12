@@ -1,0 +1,29 @@
+{
+    "name": "Transaction",
+    "namespace": "com.lunchometer.avro",
+    "type": "record",
+    "fields": [
+        {
+          "name": "id",
+          "type": "string"
+        },
+        {
+          "name": "amount",
+          "type": {
+              "type": "bytes",
+              "logicalType": "decimal",
+              "precision": 4,
+              "scale": 2
+          }
+        },
+        {
+          "name": "created",
+          "type": "long",
+          "logicalType": "timestamp-millis"
+        },
+        {
+          "name": "retailer",
+          "type": "string"
+        }
+    ]
+}

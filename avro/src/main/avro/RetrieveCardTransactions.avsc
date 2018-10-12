@@ -1,0 +1,11 @@
+{
+    "name": "RetrieveCardTransactions",
+    "namespace": "com.lunchometer.avro",
+    "type": "record",
+    "fields": [
+        {
+            "name": "header",
+            "type": "CommandHeader"
+        }
+    ]
+}
